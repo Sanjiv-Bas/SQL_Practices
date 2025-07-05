@@ -97,10 +97,6 @@ CREATE TABLE SubjectDetails (
     foreign key(StudID) references StudentsDetails(StudID)
 );
 
-
-
-
-
 CREATE TABLE SubjectDetails (
     StudID VARCHAR(50),
     StudName VARCHAR(50),
@@ -268,3 +264,36 @@ INSERT INTO fees_details values(StudID,StudName, sports_hall_maintenance_fees, s
 ('STU069', 'Vijay Anand', 1700, 3000, 3800, 52000, 30000, 2000);
 
 select * from subjectdetails;
+
+-- Questions with answers are given below
+-- 1. Display all records from the StudentsDetails table
+Select * from StudentsDetails;
+-- 2. List the StudName and Age of all female students from StudentsDetails
+select StudName,Age from StudentsDetails;
+-- 3. Retrieve all students from StudentsDetails who are older than 16
+select * from Students details where Age > 16;
+-- 4. Get the names and contact numbers of students from StudentsDetails who live on "Temple Road."
+select StudName, ContactNumber from Studentsdetails where ResiAdd like "%Temple Road%";
+-- 5. Show the student names and ages from StudentsDetails sorted by age in ascending order.
+select StudName,Age from StudentsDetails order by Age;
+-- 6.Retrieve all records from SubjectDetails where the grade is 'A+'.
+select * from Subjectdetails where Grade = 'A+';
+-- 7. Find all students in SubjectDetails who scored less than 70 in English
+select * from subjectdetails where English > 70;
+-- 8. List student IDs and names from SubjectDetails where ComputerScience marks are between 80 and 90.
+Select StudID,StudName from subjectdetails where computerscience between 80 and 90;
+-- 9. play StudID, StudName, and TotalMarks from SubjectDetails in descending order of TotalMarks
+select StudId,StudName,TotalMarks from subjectdetails order by TotalMarks;
+-- 10. Get the student names and their grades from SubjectDetails
+select StudName, Grade from subjectdetails;
+-- 11. Fetch all records from the fees_details table
+Select * from fees_details;
+-- 12. Retrieve StudID, StudName, and Tution_fees from fees_details
+select StudID, StudName, Tution_fees from fees_details;
+-- 13. Find students in fees_details who paid more than ₹50,000 in Tution_fees
+select StudName from fees_details where Tution_fees >50000;
+-- 14. List all  from fees_details sorted by total fees (sum of all individual fees) in descending order.
+select StudID, sum(sports_hall_maintenance_fees+sports_coach_fees+Travelling_fees+Tution_fees+course_fees+Exam_fees) as total_fees from fees_details group by StudId order by total_fees desc;
+-- 15 Get the average sports_hall_maintenance_fees from fees_details 
+select avg(sports_hall_maintenance_fees) as average_sports_hall_maintenance_fees from fees_details;
+
