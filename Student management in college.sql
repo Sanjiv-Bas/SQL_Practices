@@ -96,7 +96,6 @@ CREATE TABLE SubjectDetails (
     Grade VARCHAR(20),
     foreign key(StudID) references StudentsDetails(StudID)
 );
-
 CREATE TABLE SubjectDetails (
     StudID VARCHAR(50),
     StudName VARCHAR(50),
@@ -191,7 +190,6 @@ course_fees int,
 Exam_fees int,
 foreign key(StudID) references StudentsDetails(StudID)
 );
-
 INSERT INTO fees_details values(StudID,StudName, sports_hall_maintenance_fees, sports_coach_fees, Travelling_fees, Tution_fees, course_fees, Exam_fees),
 ('STU001', 'Sanjiv', 1500, 2500, 3000, 45000, 25000, 1500),
 ('STU002', 'Divya', 1200, 2000, 250, 42000, 22000, 1200),
@@ -262,9 +260,7 @@ INSERT INTO fees_details values(StudID,StudName, sports_hall_maintenance_fees, s
 ('STU067', 'Madan Kumar', 2000, 3500, 5000, 60000, 35000, 2500),
 ('STU068', 'Latha Mohan', 1100, 1800, 2200, 38000, 18000, 1100),
 ('STU069', 'Vijay Anand', 1700, 3000, 3800, 52000, 30000, 2000);
-
 select * from subjectdetails;
-
 -- Questions with answers are given below
 -- 1. Display all records from the StudentsDetails table
 Select * from StudentsDetails;
@@ -296,4 +292,73 @@ select StudName from fees_details where Tution_fees >50000;
 select StudID, sum(sports_hall_maintenance_fees+sports_coach_fees+Travelling_fees+Tution_fees+course_fees+Exam_fees) as total_fees from fees_details group by StudId order by total_fees desc;
 -- 15 Get the average sports_hall_maintenance_fees from fees_details 
 select avg(sports_hall_maintenance_fees) as average_sports_hall_maintenance_fees from fees_details;
-
+-- 16 What is the total tuition fee collected from all students?
+select sum(sports_hall_maintenance_fees + sports_coach_fees + Travelling_fees + Tution_fees + course_fees+Exam_fees) as total_fees from fees_details;
+-- 17. List the names of students who have sports hall maintenance fees greater than 1500.
+select StudName from fees_details where sports_hall_maintenance_fees > 1500;
+-- 18. How many students have a total fee (sum of all fees) greater than 50000
+SELECT StudName, 
+       SUM(sports_coach_fees + sports_hall_maintenance_fees + Travelling_fees + Tution_fees + Course_fees + Exam_fees) AS total_fees 
+FROM fees_details 
+GROUP BY StudName 
+HAVING total_fees > 50000 
+ORDER BY total_fees ASC;
+--  19. What is the total number of students in the StudentsDetails table?
+select count(StudName) as Total_Number_Students from fees_details;
+-- 20. How many students are aged 18?
+select *from StudentsDetails where Age = 18;
+-- 21. Which student has the highest age, and what is their name?
+SELECT StudName, Age
+FROM StudentsDetails
+WHERE Age = (select max(age) from studentsdetails);
+-- 22. List all students who are male and live in "North Road".
+Select StudName
+from  StudentsDetails
+where Gender = "Male" and ResiAdd like "%North Road%"; 
+--  23.How many students have a residential address that includes "Street"?
+select StudName, ResiAdd
+from StudentsDetails
+where ResiAdd like "%Street";
+-- 24. What is the average age of all students in the StudentsDetails table
+select avg(Age) as Average
+from StudentsDetails;
+-- 25. Which student has the longest residential address?
+select StudName, ResiAdd, length(ResiAdd) as Address 
+from StudentsDetails
+order by length(ResiAdd) desc
+limit 1;
+-- 26. List the names and ages of students who are 15 years old.
+Select StudName, Age
+from StudentsDetails
+where age = 15;
+-- 27. What is the highest total marks obtained by a student in the SubjectDetails table?
+select StudName, TotalMarks
+from SubjectDetails 
+order by TotalMarks desc
+Limit 1;
+-- 28. List the names of students who scored an average of more than 90
+select StudName, Average 
+from SubjectDetails 
+where Average >90;
+-- 29. How many students received a grade of 'A+'?
+select count(Grade) as Stu_Number_Of_Aplus_Grade
+from SubjectDetails
+where Grade = "A+" ;
+-- 30. Which student has the lowest score in English;
+select StudName
+From SubjectDetails
+where English= (select min(English) 
+from SubjectDetails);
+-- 31. List the names of students who scored below 70 in any subject.
+select StudName, English, ComputerScience, SignalProcessing, ComputerGraphics
+From SubjectDetails
+Where English < 70 or ComputerScience < 70 OR SignalProcessing < 70 OR ComputerGraphics < 70;
+-- 32. Calculate the average marks for the subject "Signal Processing";
+select avg(SignalProcessing) as SignalProcessing_average from SubjectDetails;
+select * from Fees_Details;
+-- 33. What is the total tuition_fees collected from all students;
+select sum(tution_fees) from Fees_details;
+-- 34. List the names of students who have sports hall maintenance fees greater than 1500.
+select StudName from Fees_details where sports_hall_maintenance_fees >1500;
+-- 35. What is the average travelling fee paid by students
+select avg(Travelling_fees) from fees_details;
