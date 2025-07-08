@@ -1,0 +1,215 @@
+Create database Student_Management_System;
+use Student_Management_system;
+create table Students
+(
+student_id Varchar(22) unique,
+ name varchar(20),
+ age int,
+ class int,
+ contact bigint unique
+ );
+Select * from students;
+alter table students
+ modify column class varchar(20);
+ insert into students value('S115232', 'Sanjiv', 28, 'B.Sc', 9003043090);
+insert into students value('S115233', 'Divya', 22, 'B.com', 9003013090);
+insert into students value('S115234', 'Balaji', 26, 'MBA', 9003023090);
+insert into students value('S115235', 'Narayanan', 32, 'MCOM', 9003039040);
+insert into students value('S115236', 'Suresh', 33, 'B.com', 9003053090);
+insert into students value('S115237', 'Kumar', 29, 'BBA', 9003063090);
+insert into students value('S115238', 'Rajesh', 28, 'BCA', 2003043091);	
+insert into students value('S115239', 'Kanishka', 31, 'MCA', 2003043090);	
+insert into students value('S115240', 'Tanishka', 29, 'MSC', 2003053090);	
+insert into students value('S115241', 'Mariska', 28, 'B.Sc', 2003063090);
+insert into students value('S115242', 'Siddesh', 26, 'B.com', 2003163090);
+insert into students value('S115243', 'Siddhu', 33, 'MBA', 2003173090);
+insert into students value('S115244', 'Anbu', 22, 'MCOM', 2013183092);
+insert into students value('S115245', 'Kumaran', 31, 'B.com', 2014840925);
+insert into students value('S115246', 'Viswa', 32, 'BBA', 4009033090);
+insert into students value('S115247', 'Madhu', 23, 'BCA', 5009043090);
+insert into students value('S115248', 'Hema', 24, 'MCA', 7003043090);
+insert into students value('S115249', 'Siva', 28, 'MSC', 8003043080);
+insert into students value('S115250', 'Swathi', 29, 'B.Sc', 7003043080);
+insert into students value('S115251', 'Kumaresan', 27, 'B.com', 6003043070);
+insert into students value('S115252', 'Murugan', 38, 'MBA', 6003043080);
+insert into students value('S115253', 'Shanmugan', 36, 'MCOM', 9076004308);
+insert into students value('S115254', 'Kadamban', 33, 'B.com', 3009034390);
+insert into students value('S115255', 'Idhumban', 39, 'BBA', 7003059030);
+Select * from students;
+create table course
+(
+course_id varchar(10),
+course_name varchar(10),
+duration decimal,
+Debits_Grade varchar(10)
+);
+select * from course;
+alter table course
+modify column duration decimal(3,2);
+INSERT INTO course values('T5125', 'Java', 2, 'C');
+INSERT INTO course values('T5126', '.net', 2.5, 'Aplus');
+INSERT INTO course values('T5127', 'Python', 2, 'Applus');
+INSERT INTO course values('T5128', 'MYSQL', 1, 'B');
+INSERT INTO course values('T5129', 'VB', 0.5, 'D');
+INSERT INTO course values('T5130', 'HTML', 0.5, 'A');
+INSERT INTO course values('T5131', 'Jason', 1, 'B');
+INSERT INTO course values('T5132', 'Oracle', 3, 'C');
+INSERT INTO course values('T5133', 'C', 3.5, 'Aplus');
+INSERT INTO course values('T5134', 'Cplus', 3.8, 'Applus');
+INSERT INTO course values('T5135', 'Java', 1, 'B');
+INSERT INTO course values('T5136', '.net', 1.5, 'D');
+INSERT INTO course values('T5137', 'Python', 2, 'A');
+INSERT INTO course values('T5138', 'MYSQL', 2.5, 'B');
+INSERT INTO course values('T5139', 'VB', 2, 'C');
+INSERT INTO course values('T5140', 'HTML', 1, 'Aplus');
+INSERT INTO course values('T5141', 'Jason', 0.5, 'Applus');
+INSERT INTO course values('T5142', 'Oracle', 0.5, 'B');
+INSERT INTO course values('T5143', 'C', 1, 'D');
+INSERT INTO course values('T5144', 'Cplus', 3, 'A');
+INSERT INTO course values('T5145', 'Java', 3.5, 'B');
+INSERT INTO course values('T5146', '.net', 3.8, 'C');
+select * from course;
+create table enrollment
+(
+enrollment_id varchar(20),
+student_id varchar(20),
+course_ID varchar(20),
+enrollment_date date,
+status varchar(20)
+);
+INSERT INTO enrollment(enrollment_id, student_id, course_id, enrollment_date, status) VALUES
+('ST123', 'S115232', 'T5123', '2024-01-01', 'Completed'),
+('ST124', 'S115233', 'T5124', '2024-01-03', 'Pending'),
+('ST125', 'S115234', 'T5125', '2024-01-05', 'Completed'),
+('ST126', 'S115235', 'T5126', '2024-01-07', 'Completed'),
+('ST127', 'S115236', 'T5127', '2024-01-09', 'Pending'),
+('ST128', 'S115237', 'T5128', '2024-01-11', 'Completed'),
+('ST129', 'S115238', 'T5129', '2024-01-13', 'Completed'),
+('ST130', 'S115239', 'T5130', '2024-01-15', 'Pending'),
+('ST131', 'S115240', 'T5131', '2024-01-17', 'Pending'),
+('ST132', 'S115241', 'T5132', '2024-01-19', 'Pending'),
+('ST133', 'S115242', 'T5133', '2024-01-21', 'Completed'),
+('ST134', 'S115243', 'T5134', '2024-01-23', 'Completed'),
+('ST135', 'S115244', 'T5135', '2024-01-25', 'Pending'),
+('ST136', 'S115245', 'T5136', '2024-01-27', 'Completed'),
+('ST137', 'S115246', 'T5137', '2024-01-29', 'Pending'),
+('ST138', 'S115247', 'T5138', '2024-01-31', 'Pending'),
+('ST139', 'S115248', 'T5139', '2024-02-02', 'Completed'),
+('ST140', 'S115249', 'T5140', '2024-02-04', 'Completed'),
+('ST141', 'S115250', 'T5141', '2024-02-06', 'Completed'),
+('ST142', 'S115251', 'T5142', '2024-02-08', 'Pending'),
+('ST143', 'S115252', 'T5143', '2024-02-10', 'Pending'),
+('ST144', 'S115253', 'T5144', '2024-02-12', 'Pending'),
+('ST145', 'S115254', 'T5145', '2024-02-14', 'Completed'),
+('ST146', 'S115255', 'T5146', '2024-02-16', 'Completed');
+select * from enrollment;
+Create table Fees
+(
+Fees_ID varchar(20),
+Student_ID varchar(20),
+Amount_paid bigint,
+DueDate date);
+INSERT INTO Fees (Fees_ID, Student_ID, Amount_Paid, DueDate) VALUES
+('STR159', 'S115232', 35500.00, '2024-03-01'),
+('STR160', 'S115233', 40000.00, '2024-03-03'),
+('STR161', 'S115234', 50000.00, '2024-03-05'),
+('STR162', 'S115235', 42000.00, '2024-03-07'),
+('STR163', 'S115236', 39000.00, '2024-03-09'),
+('STR164', 'S115237', 37000.00, '2024-03-11'),
+('STR165', 'S115238', 22000.00, '2024-03-13'),
+('STR166', 'S115239', 28000.00, '2024-03-15'),
+('STR167', 'S115240', 22000.00, '2024-03-17'),
+('STR168', 'S115241', 32000.00, '2024-03-19'),
+('STR169', 'S115242', 35500.00, '2024-03-21'),
+('STR170', 'S115243', 40000.00, '2024-03-23'),
+('STR171', 'S115244', 50000.00, '2024-03-25'),
+('STR172', 'S115245', 42000.00, '2024-03-27'),
+('STR173', 'S115246', 39000.00, '2024-03-29'),
+('STR174', 'S115247', 37000.00, '2024-03-31'),
+('STR175', 'S115248', 22000.00, '2024-04-02'),
+('STR176', 'S115249', 28000.00, '2024-04-04'),
+('STR177', 'S115250', 22000.00, '2024-04-06'),
+('STR178', 'S115251', 32000.00, '2024-04-08'),
+('STR179', 'S115252', 35500.00, '2024-04-10'),
+('STR180', 'S115253', 40000.00, '2024-04-12'),
+('STR181', 'S115254', 50000.00, '2024-04-14'),
+('STR182', 'S115255', 42000.00, '2024-04-16');
+select * from fees;
+create table exams
+(
+exam_id varchar(20),
+course_id varchar(20),
+exam_date date,
+total_marks varchar(25)
+);
+Create table results
+(
+Result_id varchar(25),
+student_id varchar(25),
+exam_id varchar(25),
+marks_obtained varchar(25),
+grade varchar(25)
+);
+INSERT INTO results (Result_id, Student_id,Exam_id,Marks_obtained,grade) VALUES
+('SAN222', 'S115232', 'DIV143', 94, 'A'),
+('SAN223', 'S115233', 'DIV144', 99, 'B'),
+('SAN224', 'S115234', 'DIV145', 92, 'C'),
+('SAN225', 'S115235', 'DIV146', 96, 'A+'),
+('SAN226', 'S115236', 'DIV147', 85, 'A++'),
+('SAN227', 'S115237', 'DIV148', 88, 'B'),
+('SAN228', 'S115238', 'DIV149', 89, 'D'),
+('SAN229', 'S115239', 'DIV150', 87, 'A'),
+('SAN230', 'S115240', 'DIV151', 91, 'B'),
+('SAN231', 'S115241', 'DIV152', 92, 'C'),
+('SAN232', 'S115242', 'DIV153', 97, 'A+'),
+('SAN233', 'S115243', 'DIV154', 95, 'A++'),
+('SAN234', 'S115244', 'DIV155', 96, 'B'),
+('SAN235', 'S115245', 'DIV156', 94, 'D'),
+('SAN236', 'S115246', 'DIV157', 99, 'A'),
+('SAN237', 'S115247', 'DIV158', 92, 'B'),
+('SAN238', 'S115248', 'DIV159', 96, 'C'),
+('SAN239', 'S115249', 'DIV160', 85, 'A+'),
+('SAN240', 'S115250', 'DIV161', 88, 'A++'),
+('SAN241', 'S115251', 'DIV162', 89, 'B'),
+('SAN242', 'S115252', 'DIV163', 87, 'D'),
+('SAN243', 'S115253', 'DIV164', 91, 'A'),
+('SAN244', 'S115254', 'DIV165', 92, 'B'),
+('SAN245', 'S115255', 'DIV166', 97, 'C');
+select * from results;
+Create table Attendance
+(
+attendance_id varchar(20),
+student_id varchar(20),
+dates varchar(50),
+Status varchar(20)
+);
+INSERT INTO attendance (attendance_id, Student_id, Dates, Status) VALUES
+('SANDI3222', 'S115232', 'No Leaves', 'Full'),
+('SANDI3223', 'S115233', 'No Leaves', 'Full'),
+('SANDI3224', 'S115234', 'No Leaves', 'Full'),
+('SANDI3225', 'S115235', 'No Leaves', 'Full'),
+('SANDI3226', 'S115236', 'No Leaves', 'Full'),
+('SANDI3227', 'S115237', 'No Leaves', 'Full'),
+('SANDI3228', 'S115238', 'No Leaves', 'Full'),
+('SANDI3229', 'S115239', 'No Leaves', 'Full'),
+('SANDI3230', 'S115240', 'No Leaves', 'Full'),
+('SANDI3231', 'S115241', 'No Leaves', 'Full'),
+('SANDI3232', 'S115242', 'No Leaves', 'Full'),
+('SANDI3233', 'S115243', 'No Leaves', 'Full'),
+('SANDI3234', 'S115244', 'No Leaves', 'Full'),
+('SANDI3235', 'S115245', 'No Leaves', 'Full'),
+('SANDI3236', 'S115246', 'No Leaves', 'Full'),
+('SANDI3237', 'S115247', 'No Leaves', 'Full'),
+('SANDI3238', 'S115248', 'No Leaves', 'Full'),
+('SANDI3239', 'S115249', 'No Leaves', 'Full'),
+('SANDI3240', 'S115250', 'No Leaves', 'Full'),
+('SANDI3241', 'S115251', 'No Leaves', 'Full'),
+('SANDI3242', 'S115252', 'No Leaves', 'Full'),
+('SANDI3243', 'S115253', 'No Leaves', 'Full'),
+('SANDI3244', 'S115254', 'No Leaves', 'Full'),
+('SANDI3245', 'S115255', 'No Leaves', 'Full');
+select * from attendance;
+-- questions are getting started
+-- QUESTIONS
+-- 1. List all students and their details.
+SELECT * FROM STUDENTS;
