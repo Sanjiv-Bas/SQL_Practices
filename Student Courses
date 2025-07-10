@@ -235,3 +235,51 @@ where Amount_paid < 30000;
 -- 7. Show all students who scored more than 95 marks in the exam.
 select * from results
 where marks_obtained >95;
+-- Where Clause QUESTIONS
+-- 1. List all students and their details.
+use Student_management_system;
+SELECT * FROM enrollment;
+-- 1. Display students whose class is ‘B.com’
+select * from Students
+where class = "B.Com";
+-- 2. Find all students whose age is greater than 30.
+select * from students
+where age > 30;
+-- 3. Show all students who are enrolled in the course with ID ‘T5137’.
+select * from enrollment
+where course_ID = "T5137";
+-- 4.  List all courses with a duration greater than 3 Months.
+select * from course
+where duration = 3.00;
+-- 5. Find students whose contact number starts with ‘9003’.
+select * from students
+where contact like  "9003%";
+-- 6.Display fees details of students who paid less than ₹30,000.
+select * from fees
+where Amount_paid < 30000;
+-- 7. Show all students who scored more than 95 marks in the exam.
+select * from results
+where marks_obtained >95;
+-- 8.Find attendance records where status is ‘Full’.
+select * from attendance
+where Status = "Full";
+-- 9. List students who belong to the class ‘MBA’ or ‘MCOM’.
+select * from course
+where course_name in ("C","Cplus");
+-- 10. Show students whose names start with ‘S’.
+select * from students
+where name like "S%";
+-- Group by clause questions
+-- 1. Count students in each class
+select class, count(*) as Total_Students
+from students
+group by class;
+-- 2. Count students in each age
+select age, count(Student_ID) as Total_Students
+from students
+group by age;
+-- 3. Total fees paid by each student
+Select Student_ID, sum(Amount_paid) as Total_Amount
+from fees
+group by Student_ID;
+-- 4.Number of students per enrollment status
