@@ -159,3 +159,103 @@ where Furnitures = "Chair";
 -- Display entries where Electronic_Items is not mentioned
 select * from Home_essentials
 where Electronic_items is null;
+
+Create table Customer_details
+(
+Bill_Number varchar(55),
+Customer_Name varchar(55),
+Customer_address varchar(55),
+Customer_PhNumber varchar(22),
+foreign key (Bill_Number) References Home_essentials(Bill_Number)
+);
+select count(Bill_Number) from home_essentials;
+INSERT INTO Customer_details VALUES ('S115001', 'Arun Kumar', 'Chennai', '9876543210');
+INSERT INTO Customer_details VALUES ('S115002', 'Bala Murugan', 'Madurai', '8765432109');
+INSERT INTO Customer_details VALUES ('S115003', 'Chitra Devi', 'Salem', '9898989898');
+INSERT INTO Customer_details VALUES ('S115004', 'Dinesh Raj', 'Coimbatore', '9876501234');
+INSERT INTO Customer_details VALUES ('S115005', 'Ezhil Arasan', 'Trichy', '9123456780');
+INSERT INTO Customer_details VALUES ('S115006', 'Farzana Begum', 'Tirunelveli', '9876001122');
+INSERT INTO Customer_details VALUES ('S115007', 'Gokul Nath', 'Vellore', '8912345678');
+INSERT INTO Customer_details VALUES ('S115008', 'Harini Priya', 'Erode', '9012345612');
+INSERT INTO Customer_details VALUES ('S115009', 'Ilango', 'Karur', '9812312345');
+INSERT INTO Customer_details VALUES ('S115010', 'Janani', 'Thanjavur', '9876000998');
+INSERT INTO Customer_details VALUES ('S115011', 'Karthik Raja', 'Dindigul', '8999911111');
+INSERT INTO Customer_details VALUES ('S115012', 'Lakshmi', 'Tiruppur', '9990001123');
+INSERT INTO Customer_details VALUES ('S115013', 'Muthu Kumar', 'Namakkal', '9812340987');
+INSERT INTO Customer_details VALUES ('S115014', 'Nandhini', 'Virudhunagar', '9876567890');
+INSERT INTO Customer_details VALUES ('S115015', 'Omprakash', 'Nagercoil', '9898123456');
+INSERT INTO Customer_details VALUES ('S115016', 'Pavithra', 'Cuddalore', '9876098765');
+INSERT INTO Customer_details VALUES ('S115017', 'Quadir', 'Kanchipuram', '9090909090');
+INSERT INTO Customer_details VALUES ('S115018', 'Revathi', 'Tiruvannamalai', '9123459876');
+INSERT INTO Customer_details VALUES ('S115019', 'Surya', 'Karaikudi', '8989898989');
+INSERT INTO Customer_details VALUES ('S115020', 'Tamilarasi', 'Nagapattinam', '9812311221');
+INSERT INTO Customer_details VALUES ('S115021', 'Udhaya', 'Ramanathapuram', '8976123450');
+INSERT INTO Customer_details VALUES ('S115022', 'Vignesh', 'Tenkasi', '9876070707');
+INSERT INTO Customer_details VALUES ('S115023', 'Yamini', 'Perambalur', '9812342222');
+INSERT INTO Customer_details VALUES ('S115024', 'Zahir Hussain', 'Sivaganga', '9991122334');
+INSERT INTO Customer_details VALUES ('S115025', 'Anand', 'Kumbakonam', '9888123456');
+INSERT INTO Customer_details VALUES ('S115026', 'Bhuvana', 'Pudukkottai', '9898981212');
+INSERT INTO Customer_details VALUES ('S115027', 'Chelladurai', 'Theni', '9011223344');
+INSERT INTO Customer_details VALUES ('S115028', 'Deepika', 'Tiruchengode', '9876098123');
+INSERT INTO Customer_details VALUES ('S115029', 'Eswaran', 'Mayiladuthurai', '9810001111');
+INSERT INTO Customer_details VALUES ('S115030', 'Fathima', 'Sankagiri', '9876004321');
+INSERT INTO Customer_details VALUES ('S115031', 'Gopi', 'Ariyalur', '9812344444');
+INSERT INTO Customer_details VALUES ('S115032', 'Hema', 'Avinashi', '9090901234');
+INSERT INTO Customer_details VALUES ('S115033', 'Inba', 'Udumalpet', '9812347777');
+INSERT INTO Customer_details VALUES ('S115034', 'Jayaprakash', 'Pollachi', '9876010101');
+INSERT INTO Customer_details VALUES ('S115035', 'Keerthana', 'Thiruthuraipoondi', '9812309876');
+INSERT INTO Customer_details VALUES ('S115036', 'Logesh', 'Mannargudi', '8899001122');
+INSERT INTO Customer_details VALUES ('S115037', 'Mahalakshmi', 'Panruti', '9812399999');
+INSERT INTO Customer_details VALUES ('S115038', 'Naveen', 'Papanasam', '9123456677');
+INSERT INTO Customer_details VALUES ('S115039', 'Oviya', 'Tirumangalam', '9812323232');
+INSERT INTO Customer_details VALUES ('S115040', 'Praveen', 'Chidambaram', '8976543200');
+INSERT INTO Customer_details VALUES ('S115041', 'Quin', 'Thuckalay', '8999888777');
+INSERT INTO Customer_details VALUES ('S115042', 'Raghavi', 'Ambasamudram', '9812304567');
+INSERT INTO Customer_details VALUES ('S115043', 'Sankar', 'Sattur', '9090123456');
+INSERT INTO Customer_details VALUES ('S115044', 'Thenmozhi', 'Kovilpatti', '9812301122');
+INSERT INTO Customer_details VALUES ('S115045', 'Umar', 'Viluppuram', '9888123400');
+INSERT INTO Customer_details VALUES ('S115046', 'Vasuki', 'Thoothukudi', '9876000011');
+INSERT INTO Customer_details VALUES ('S115047', 'Yogesh', 'Melur', '9812398765');
+INSERT INTO Customer_details VALUES ('S115048', 'Zara', 'Arakkonam', '8999099888');
+INSERT INTO Customer_details VALUES ('S115049', 'Anitha', 'Vaniyambadi', '9012341111');
+INSERT INTO Customer_details VALUES ('S115050', 'Barath', 'Thiruvallur', '9812313131');
+select * from Customer_details;
+-- ~~~~~~~~~~~~~~
+-- Basic Queries 
+-- ~~~~~~~~~~~~~~
+-- Display all records from Customer_details.
+select * 
+from Customer_details;
+-- Display the names of all customers.
+select Customer_Name
+from Customer_details;
+-- Display distinct customer addresses.
+select distinct Customer_address
+from Customer_details;
+-- Display customers whose phone number starts with '9'
+select * 
+from customer_details
+where Customer_PhNumber like "9%";
+-- Display customers whose phone number starts with '8'
+select * 
+from customer_details
+where Customer_PhNumber like "8%";
+-- Count total number of customers.
+select count(Customer_Name) as TotalCustomers
+from customer_details;
+-- Display customers living in 'Chennai'
+select *
+from customer_details
+where Customer_address = "chennai";
+-- or like below query
+select *
+from customer_details
+where Customer_address like "Chennai%";
+-- Display customers whose name starts with 'A'.
+select *
+from Customer_details
+where Customer_Name like "A%";
+-- Display customer details whose name contains 'ra'.
+select * 
+from Customer_details
+where Customer_Name like "%ra%";
