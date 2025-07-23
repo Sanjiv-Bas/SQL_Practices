@@ -259,3 +259,101 @@ where Customer_Name like "A%";
 select * 
 from Customer_details
 where Customer_Name like "%ra%";
+-- ~~~~~~~~~~~~~~
+--	Filter with WHERE, IN, LIKE, BETWEEN 
+-- ~~~~~~~~~~~~~~
+-- Display customers whose name is either 'Arun Kumar' or 'Balaji'
+select * 
+from customer_details
+where Customer_Name like "Arun kumar%" 
+or Customer_Name like "Balaji%";
+-- or 
+select * 
+from customer_details
+where Customer_Name in ("Arun Kumar","Balaji");
+-- Display customers who live in 'Madurai', 'Mylapore', or 'K.K.Nagar'.
+select *
+from customer_details
+where Address like "%Mylapore%"
+or Address like "%K.K.Nagar%";
+-- Display customers whose name length is greater than 6 characters.
+select customer_Name, length(Customer_Name) as LengthOfCustomerName
+from  customer_details
+group by customer_Name
+having length(Customer_Name) > 6;
+-- Display customers whose phone number is between '9000000000' and '9999999999'.
+select * 
+from  customer_details
+where Customer_PhNumber between "9000000000" and "9999999999";
+-- Display customers whose address contains the letter 'a'.
+select * 
+from  customer_details
+where Customer_address like "%A%";
+-- Display customers whose name includes 'Kumar'.
+select *
+from  customer_details
+where customer_name like "%Kumar%";
+-- Display customers with phone numbers ending in '0'.
+select *
+from customer_details
+where Customer_PhNumber like "0%";
+-- Filter with WHERE, IN, LIKE, BETWEEN (11–20)
+-- Display customers whose name is either 'Arun Kumar' or 'Bala Murugan'.
+Select Customer_Name
+from customer_details
+where Customer_Name like "%Arun kumar"
+or Customer_Name like "%Bala Murugan";
+-- Display customers who live in 'Madurai', 'Trichy', or 'Chennai'.
+select *
+from customer_details
+where Customer_address like "Chennai"
+ or Customer_address like "Trichy"
+ or Customer_address like "Madurai";
+ -- Display customers whose name length is greater than 10 characters.
+ select Bill_Number, Customer_Name, length(Customer_Name) as NameLength
+ from customer_details
+ where length(Customer_Name) >10;
+ -- Display customers whose name includes 'Kumar'.
+ select *
+ from customer_details
+ where Customer_name like "%Kumar%";
+-- ~~~~~~~~~~
+-- 📊 ORDER BY, LIMIT (21–30)
+-- ~~~~~~~~~~
+-- Display all customer details sorted by Customer_Name in ascending order.
+select *
+from customer_details
+order by Customer_Name asc;
+-- Display all customer details sorted by Customer_address in descending order.
+select * 
+from customer_details
+order by Customer_address desc;
+-- Display the first 5 customer records.
+select * 
+from customer_details
+order by Bill_Number
+limit 5;
+-- Display the last 10 customer records (based on Bill_Number).
+select *
+from customer_details
+order by Bill_number desc
+limit 10;
+-- Display top 3 customers whose name starts with 'a'.
+select * 
+from customer_details
+where customer_name like "A%"
+Limit 3;
+-- Display customers in reverse order of phone numbers.
+select * 
+from customer_details
+order by Customer_PhNumber desc;
+-- Display the name of the customer with the highest Bill_Number.
+select *
+from customer_details
+order by Bill_Number desc
+limit 1;
+-- Display customers whose phone numbers are smallest in value (LIMIT 1).
+SELECT *
+FROM customer_details
+ORDER BY Customer_PhNumber ASC
+LIMIT 1;
