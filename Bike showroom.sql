@@ -127,7 +127,9 @@ INSERT INTO Bike_details VALUES ('CUST049', 'Simple One', '140000', 'NA');
 INSERT INTO Bike_details VALUES ('CUST050', 'Ultraviolette F77', '350000', 'NA');
 select count(*) from Bike_details;
 select count(*) from Bike_details;
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -- SELECT Clause (Basic Retrievals)
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -- Retrieve all columns from the Customer_details table.
 select * from Customer_details;
 -- Show the Name and Phone_Number of all customers
@@ -164,3 +166,39 @@ from customer_details;
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -- WHERE Clause – Conditional Filtering
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- Find all customers older than 35.alter
+select * 
+from customer_details
+where Age > 35;
+-- List all customers who are female.
+select * 
+from customer_details
+where Gender = "Female";
+-- Retrieve customers who live in 'Palani'
+select * 
+from customer_details
+where address = "palani";
+-- Show customers with names starting with the letter 'J'.
+select *
+from customer_details
+where name like "J%";
+-- Find all customers aged between 25 and 40.
+select *
+from customer_details
+where age between 25 and 40;
+-- Get customers whose Mail_ID contains '@gmail.com'.
+select *
+from customer_details
+where Mail_ID like "%@gmail.com%";
+-- Retrieve records where Phone_Number is not null.
+SELECT *
+FROM customer_details
+WHERE Phone_Number IS NOT NULL;
+-- List customers whose name contains the letter 'a
+select *
+from customer_details
+where name like "%a%";
+-- Get customers whose Age is not 30.
+select *
+from customer_details
+where age != 30;
