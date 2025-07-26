@@ -126,3 +126,41 @@ INSERT INTO Bike_details VALUES ('CUST048', 'Hero Vida V1', '125000', 'NA');
 INSERT INTO Bike_details VALUES ('CUST049', 'Simple One', '140000', 'NA');
 INSERT INTO Bike_details VALUES ('CUST050', 'Ultraviolette F77', '350000', 'NA');
 select count(*) from Bike_details;
+select count(*) from Bike_details;
+-- SELECT Clause (Basic Retrievals)
+-- Retrieve all columns from the Customer_details table.
+select * from Customer_details;
+-- Show the Name and Phone_Number of all customers
+select Name, Phone_number
+from customer_details;
+-- Get the list of distinct Gender values
+select distinct Gender
+from customer_details;
+-- Display only Customer_IDNumber and Address.
+select Customer_IDNumber, Address
+from customer_details;
+-- Show the names of customers in uppercase.
+select upper(Name) as UName
+from customer_details;
+-- Concatenate Name and Mail_ID into a single column called ContactInfo.
+select concat(Name, "     ",Mail_ID) as ContactInfo
+from customer_details;
+-- Get the length of each customer's name.
+select Name, length(Name) as Namelength 
+from customer_details;
+-- Select Name and alias it as Customer_Name
+select Name as Customer_Name 
+from Customer_details;
+-- List all customers and sort them by Name.
+select name 
+from customer_details
+order by name;
+-- Retrieve the first 5 characters of each customer's Mail_ID
+select left(Mail_ID,5 )
+from customer_details;
+-- Retrieve the first 3 characters of customer's name
+select left(Name, 3)
+from customer_details;
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- WHERE Clause – Conditional Filtering
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
