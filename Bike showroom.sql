@@ -202,3 +202,25 @@ where name like "%a%";
 select *
 from customer_details
 where age != 30;
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- DDL (Data Definition Language) Question
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- Create a new table Service_Record with fields Service_ID, Customer_IDNumber, Service_Date
+create table service_record
+(
+service_id varchar(25),
+Customer_IDNumber varchar(25),
+service_date date
+);
+-- Add a new column Bike_Color to the Bike_details table.
+alter table bike_details
+add column bike_colors varchar(25);
+-- Modify the data type of Bike_Amount in Bike_details to INT
+alter table bike_details
+change  Bike_Amount Bike_Amount int;
+-- Rename the column Engine_Capacity to Engine_Cap in Bike_details
+alter table bike_details
+change Engine_Capacity Engine_Cap varchar(55);
+-- Drop the column Engine_Capacity from Bike_details
+alter table bike_details
+drop column Engine_cap;
