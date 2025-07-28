@@ -224,3 +224,9 @@ change Engine_Capacity Engine_Cap varchar(55);
 -- Drop the column Engine_Capacity from Bike_details
 alter table bike_details
 drop column Engine_cap;
+-- How do you add a new column Nationality to the Customer_details table
+alter table customer_details
+add column Nationality varchar(20);
+-- How do you change the datatype of Age in Customer_details to smallint?
+alter table customer_details
+change column age age smallint;
