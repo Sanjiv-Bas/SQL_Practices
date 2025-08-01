@@ -472,3 +472,22 @@ select *
 from enrollments
 where status = "active" and enrollment_date < "2024-02-02";
 
+-- Find all students who are older than 15 and belong to class '10A'.
+select *
+from students
+where age = 15 and class = "10A";
+
+-- Retrieve all students who are in class '10A' or '10B'
+select *
+from students
+where class = "10A" or class = "10B";
+
+-- Show courses where duration is '6 months' and credits are '3'.
+select *
+from courses
+where duration = "6 months" and credits = "3";
+
+-- List students whose age is more than 14 and contact starts with '9'.
+select * 
+from students
+where age > 14 and contact like "%9";
