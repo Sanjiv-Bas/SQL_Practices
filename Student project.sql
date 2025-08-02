@@ -491,3 +491,227 @@ where duration = "6 months" and credits = "3";
 select * 
 from students
 where age > 14 and contact like "%9";
+
+-- Find enrollments where status is 'active' or 'pending'.
+select *
+from enrollments
+where status = "Active";
+
+-- List students who are either aged 13 or have class '10A'.
+select *
+from students
+where age = 13 or class = "10A";
+
+-- Show courses that are not 'Mathematics'.
+select *
+from courses
+where not  course_name = "Mathematics";
+
+-- Display students whose class is not '9A' and age is more than 13.
+select *
+from students
+where not class = "9A" and age >13;
+
+-- Find students who are not in class '10A' or whose age is less than 13.
+select * 
+from students
+where not class = "10A" or age < 13;
+
+-- Relational Operators (=, >, <, <>, >=, <=) – 10 Questions
+-- Find students whose age = 14.
+select *
+from students
+where age=14;
+
+-- Retrieve all fee records where amount_paid > 5000
+select *
+from fees
+where amount_paid > 5000;
+
+-- List all students whose age is > 14.
+select * 
+from students
+where age < 14;
+
+-- Show results where grade <> 'A'.
+select * 
+from results
+where grade <> "A";
+
+-- Find all students who are >= 17 years old.
+select *
+from students
+where age >=14;
+
+-- Show results where grade <> 'A'.
+select * 
+from results
+where grade <> "A";
+
+-- Find all students who are >= 13 years old.
+select *
+from students
+where age >= 13;
+
+-- Display exams where total_marks <= 80.
+select *
+from results
+where marks_obtained <= "80";
+
+-- List courses where credits = '4'.
+select * 
+from courses 
+where credits ="4";
+
+-- Show attendance where status = 'Absent'
+select *
+from attendance
+where status = "Absent";
+
+-- Display students whose contact number = '8899001122'.
+select *
+from students
+where contact = "8899001122";
+
+-- Find all enrollments where course_id = 'C101'.
+select * 
+from courses
+where course_id = "C101";
+
+-- 3. BETWEEN Operator – 10 Questions
+-- Find students whose age is between 14 and 18.
+select *
+from students
+where age between 11 and 14;
+
+-- Show exams where total_marks is between 50 and 100.
+select *
+from exams
+where total_marks between 55 and 100;
+
+-- List fee payments due between C
+select *
+from fees
+where due_date between "2024-03-04" and "2024-05-01";
+
+-- Display results with marks_obtained between 60 and 80.
+select * 
+from results 
+where marks_obtained between 60 and 80;
+
+-- Get students whose contact numbers are between '9000000000' and '9999999999'.
+select *
+from students
+where contact between '9000000000' and '9999999999';
+
+-- Find attendance records for dates between '2025-07-01' and '2025-07-31'.
+select *
+from attendance
+where date between "2025-07-01" and "2025-07-03";
+
+-- Show students aged between 13 and 14 and in 8th standard
+select *
+from students
+where age between "13" and "14" 
+and class like "8%";
+
+-- LIKE Operator – Questions
+-- Find students whose names start with 'S'.
+select *
+from students
+where name like "S%";
+
+-- Retrieve all courses where course_name ends with 'ics'.
+select *
+from courses
+where course_name like "%ics%";
+
+-- Show student names that contain 'an'.
+select * 
+from students
+where name like "%an";
+
+-- Display students whose class starts with '10'.
+select *
+from students
+where class like "10%";
+
+-- List students with contact numbers starting with '98'.
+select *
+from students
+where contact like "98%";
+
+-- Find course names that start with 'Data'.
+select * 
+from courses
+where course_name like "%Data%";
+
+-- Show students whose name ends with 'a'.
+select *
+from students 
+where name like "%a";
+
+-- Display classes that contain the letter 'A'.
+select *
+from students
+where name like "%a%";
+
+-- List students with names like '%sh%'
+select *
+from students
+where name like "%sh%";
+
+-- Get results where grade like 'B%'.
+select *
+from results
+where grade like "%B";
+
+-- List students in class IN ('10A', '11A', '12B').
+select * 
+from students
+where class in ("10A", "8A", "9B");
+
+-- IN / NOT IN Operator – 10 Questions
+-- List students in class IN ('10A', '11A', '12B').
+select * 
+from students
+where class in ("10A", "8A","8B");
+
+-- Show courses where course_id IN ('C101', 'C105', 'C110').
+select *
+from courses
+where course_id in ("C101","C105","C110");
+
+-- Find students whose age NOT IN (14, 15).
+select * 
+from students
+where age in (14, 15);
+
+-- Retrieve results where grade IN ('A', 'B')
+select *
+from results
+where grade in ("A","B");
+
+-- Clause-Based Queries (ORDER BY, GROUP BY, HAVING, etc.) 
+-- List students ordered by age ascending.
+select *
+from students
+order by age;
+
+-- Show courses ordered by course_name descending
+select * 
+from courses
+order by course_name desc;
+select * from enrollments;
+
+-- Count how many enrollments per course grouped by course_id
+select count(enrollments.enrollment_id) as TotalNumberOfEnrollments, courses.course_id 
+from enrollments
+join courses on enrollments.course_id = courses.course_id
+group by course_id;
+select *from fees;
+-- get the student name and fees paid by each student
+select students.student_id, students.name, sum(fees.amount_paid) as Totalfees
+from students
+join fees on students.student_id = fees.student_id
+group by students.student_id;
