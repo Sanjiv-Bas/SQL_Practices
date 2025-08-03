@@ -693,6 +693,7 @@ from results
 where grade in ("A","B");
 
 -- Clause-Based Queries (ORDER BY, GROUP BY, HAVING, etc.) 
+
 -- List students ordered by age ascending.
 select *
 from students
@@ -710,8 +711,26 @@ from enrollments
 join courses on enrollments.course_id = courses.course_id
 group by course_id;
 select *from fees;
+
 -- get the student name and fees paid by each student
 select students.student_id, students.name, sum(fees.amount_paid) as Totalfees
 from students
 join fees on students.student_id = fees.student_id
 group by students.student_id;
+
+-- Count how many students are there in each class grouped by class
+select count(students.name) NumberOfstudents, students.class
+from students
+group by class;
+
+-- Get total fees paid by each student group by student_id
+select sum(fees.amount_paid) as TotalFees, students.student_id
+from fees
+join students on students.student_id = fees.student_id
+group by student_id;
+
+-- Find students with more than 2 attendance records (use HAVING)
+select attendance_id, count(*) as Total_count
+from attendance
+group by attendance_id
+having Total_count >1;
