@@ -734,3 +734,12 @@ select attendance_id, count(*) as Total_count
 from attendance
 group by attendance_id
 having Total_count >1;
+
+
+-- Show average marks obtained in each exam grouped by exam_id.
+select courses.course_name , avg(exams.total_marks) as marks_obtained 
+from courses 
+inner join exams 
+on courses.course_id = exams.course_id
+group by course_name;
+
