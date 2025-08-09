@@ -778,12 +778,3 @@ union
 select exam_id
 from exams;
 
--- Retrieve all student names who have paid fees and all student names who have taken exams.
-select amount_paid as Paid_fees
-from fees
-union 
-select students.name 
-from students
-inner join enrollments on enrollments.student_id = students.student_id
-inner join courses on  enrollments.course_id = courses.course_id
-inner join exams on courses.course_id = exams.course_id;
