@@ -743,3 +743,47 @@ inner join exams
 on courses.course_id = exams.course_id
 group by course_name;
 
+-- List all student names and all course names in one column.
+select name as StudentName
+from students
+union
+select course_name
+from Courses;
+
+-- Retrieve all student IDs from Students and all student IDs from Fees table.
+select student_ID 
+from the students
+union
+select student_ID
+from the fees;
+
+-- Display all contact numbers of students along with course IDs from Courses
+SELECT contact AS info
+FROM Students
+UNION
+SELECT course_id
+FROM Courses;
+
+-- Get all IDs of students and all IDs of enrollments in one list.
+select student_id
+from students
+union
+select enrollment_id
+from enrollments;
+
+-- Combine the list of all enrollment_id from Enrollments with all exam_id from Exams.
+select enrollment_id
+from enrollments
+union 
+select exam_id
+from exams;
+
+-- Retrieve all student names who have paid fees and all student names who have taken exams.
+select amount_paid as Paid_fees
+from fees
+union 
+select students.name 
+from students
+inner join enrollments on enrollments.student_id = students.student_id
+inner join courses on  enrollments.course_id = courses.course_id
+inner join exams on courses.course_id = exams.course_id;
