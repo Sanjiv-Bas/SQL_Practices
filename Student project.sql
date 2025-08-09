@@ -778,3 +778,43 @@ union
 select exam_id
 from exams;
 
+-- Retrieve all student names along with the courses they are enrolled in.
+select students.name, courses.course_name
+from students
+inner join enrollments on enrollments.student_id = students.student_id
+inner join courses on courses.course_id = enrollments.course_id;
+
+-- List all students and their exam dates.
+
+select students.name, courses.course_name, exams.exam_date
+from students
+inner join enrollments on enrollments.student_id = students.student_id
+inner join courses on courses.course_id = enrollments.course_id
+inner join exams on exams.course_id = courses.course_id;
+
+-- List all students and their enrolled courses
+select students.name, courses.course_name
+from students
+inner join enrollments on enrollments.student_id = students.student_id
+inner join courses on courses.course_id = enrollments.course_id;
+
+-- Show students who have paid more than 7500
+select students.name, fees.amount_paid
+from students
+inner join fees on students.student_id = fees.student_id
+where fees.amount_paid > 7500;
+
+-- Get students along with their exam dates for each enrolled course
+select students.name, exams.exam_date, courses.course_name as enrolled_course
+from students
+inner join enrollments on enrollments.student_id = students.student_id
+inner join courses on courses.course_id = enrollments.course_id
+inner join exams on exams.course_id = courses.course_id;
+
+-- Show students who scored more than 80 marks in any exam
+select students.name,exams.exam_date,exams.total_marks as Total_marks
+from students
+inner join enrollments on students.student_id = enrollments.student_id
+inner join courses on courses.course_id = enrollments.course_id
+inner join exams on exams.course_id = courses.course_id
+where exams.total_marks>80;
