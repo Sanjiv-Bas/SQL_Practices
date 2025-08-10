@@ -818,3 +818,68 @@ inner join enrollments on students.student_id = enrollments.student_id
 inner join courses on courses.course_id = enrollments.course_id
 inner join exams on exams.course_id = courses.course_id
 where exams.total_marks>80;
+
+-- List all students with their enrolled courses
+select students.name, courses.course_name, enrollments.enrollment_id
+from students
+inner join enrollments on enrollments.student_id = students.student_id
+inner join courses on courses.course_id = enrollments.course_id;
+
+-- Show students and their payment amounts
+select students.name, fees.amount_paid
+from students
+inner join fees on fees.student_id = students.student_id;
+
+-- Get all courses and their exam dates
+select courses.course_name, exams.exam_date
+from courses
+inner join exams on exams.course_id = courses.course_id;
+
+-- Show students who have paid more than 7500
+select students.name, fees.amount_paid
+from students
+inner join fees on fees.student_id = students.student_id
+where fees.amount_paid > 7500;
+
+-- List students, their courses, and the exam dates
+select students.name, courses.course_name, exams.exam_date
+from students
+inner join enrollments on enrollments.student_id = students.student_id
+inner join courses on courses.course_id = enrollments.course_id
+inner join exams on exams.course_id = courses.course_id;
+
+
+-- List students, their courses, and the exam dates whose course name starts with M.
+select students.name, courses.course_name, exams.exam_date
+from students
+inner join enrollments on enrollments.student_id = students.student_id
+inner join courses on courses.course_id = enrollments.course_id
+inner join exams on exams.course_id = courses.course_id
+where courses.course_name like "M%";
+
+-- Show students with their exam marks and grades whose grades are "A".
+select students.name, results.marks_obtained, results.grade
+from students
+inner join results on results.student_id = students.student_id
+where results.grade = "A";
+
+-- Show all courses with students who have  paid fees above 7000.
+select students.name, courses.course_name, fees.amount_paid
+from students
+inner join enrollments on enrollments.student_id = students.student_id
+inner join courses on courses.course_id = enrollments.course_id
+inner join fees on fees.student_id = students.student_id
+where fees.amount_paid > 7000;
+
+-- List students along with course, exam date, and marks obtained
+select students.name, courses.course_name, exams.exam_date,results.marks_obtained
+from students
+inner join enrollments on enrollments.student_id = students.student_id
+inner join courses on courses.course_id = enrollments.course_id
+inner join exams on exams.course_id = courses.course_id
+inner join results on results.student_id = students.student_id;
+
+-- Get the total fees paid by each student
+select students.name,fees.amount_paid
+from students
+inner join fees on fees.student_id = students.student_id;
