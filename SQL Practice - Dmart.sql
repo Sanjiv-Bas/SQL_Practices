@@ -1,111 +1,142 @@
-Create database Dmart;
+create database Dmart;
 use Dmart;
 create table mall
 (
-id int,
-name varchar(50),
-age int,
-phone_number bigint,
-address varchar(50),
-product_name varchar(50),
-product_unit int,
-cost int
-);
-
-insert mall(id,name,age,phone_number,address,product_name,product_unit,cost) values
-(1, 'Sanjiv', 38, 9876543210, 'Chennai', 'Shoes', 2, 2500),
-(2, 'Divya', 32, 9123456789, 'Delhi', 'Handbag', 1, 3200),
-(3, 'Ravi Teja', 40, 9988776655, 'Hyderabad', 'Watch', 1, 4500),
-(4, 'Sneha Reddy', 25, 9871234567, 'Bangalore', 'Perfume', 3, 1800),
-(5, 'Karthik Raj', 31, 9765432109, 'Mumbai', 'T-Shirt', 4, 1200),
-(6, 'Meena Iyer', 29, 9654321098, 'Pune', 'Sunglasses', 2, 2200),
-(7, 'Vikram Singh', 38, 9543210987, 'Jaipur', 'Wallet', 1, 1500),
-(8, 'Divya Nair', 27, 9432109876, 'Kochi', 'Dress', 2, 2800),
-(9, 'Ajay Mehta', 45, 9321098765, 'Ahmedabad', 'Shoes', 1, 2700),
-(10, 'Neha Joshi', 33, 9210987654, 'Nagpur', 'Watch', 1, 4900),
-(11, 'Suresh Das', 36, 9109876543, 'Lucknow', 'Perfume', 2, 1600),
-(12, 'Anjali Rao', 30, 9098765432, 'Visakhapatnam', 'Handbag', 1, 3100),
-(13, 'Manoj Pillai', 42, 8987654321, 'Thiruvananthapuram', 'T-Shirt', 3, 1100),
-(14, 'Ritika Jain', 26, 8876543210, 'Indore', 'Dress', 1, 2600),
-(15, 'Rahul Verma', 39, 8765432109, 'Patna', 'Shoes', 2, 2400),
-(16, 'Pooja Kapoor', 32, 8654321098, 'Chandigarh', 'Sunglasses', 1, 2100),
-(17, 'Naveen Kumar', 28, 8543210987, 'Coimbatore', 'Wallet', 2, 1400),
-(18, 'Lakshmi Menon', 35, 8432109876, 'Madurai', 'Watch', 1, 4700),
-(19, 'Deepak Sharma', 41, 8321098765, 'Bhopal', 'Perfume', 3, 1900),
-(20, 'Shalini Singh', 29, 8210987654, 'Kanpur', 'Handbag', 1, 3300),
-(21, 'Rajesh Nair', 37, 8109876543, 'Mysore', 'T-Shirt', 2, 1300),
-(22, 'Kavita Rao', 31, 8098765432, 'Nashik', 'Dress', 1, 2700),
-(23, 'Amit Joshi', 44, 7987654321, 'Surat', 'Shoes', 1, 2600),
-(24, 'Bhavna Patel', 26, 7876543210, 'Vadodara', 'Watch', 1, 4600),
-(25, 'Gaurav Mishra', 33, 7765432109, 'Rajkot', 'Perfume', 2, 1700),
-(26, 'Isha Gupta', 30, 7654321098, 'Gwalior', 'Handbag', 1, 3400),
-(27, 'Ramesh Kumar', 38, 7543210987, 'Jodhpur', 'T-Shirt', 3, 1000),
-(28, 'Tanya Bhatia', 27, 7432109876, 'Udaipur', 'Dress', 2, 2900),
-(29, 'Vivek Anand', 36, 7321098765, 'Amritsar', 'Shoes', 2, 2300),
-(30, 'Nisha Reddy', 34, 7210987654, 'Warangal', 'Watch', 1, 4800),
-(31, 'Harish Rao', 40, 7109876543, 'Tirupati', 'Perfume', 1, 1500),
-(32, 'Preeti Sharma', 28, 7098765432, 'Noida', 'Handbag', 1, 3000),
-(33, 'Ashok Mehta', 43, 6987654321, 'Ghaziabad', 'T-Shirt', 2, 1400),
-(34, 'Renu Jain', 25, 6876543210, 'Faridabad', 'Dress', 1, 2500),
-(35, 'Siddharth Sen', 31, 6765432109, 'Ranchi', 'Shoes', 1, 2800),
-(36, 'Anita Das', 29, 6654321098, 'Jamshedpur', 'Watch', 1, 5000),
-(37, 'Tarun Yadav', 37, 6543210987, 'Agra', 'Perfume', 2, 2000),
-(38, 'Maya Pillai', 33, 6432109876, 'Trichy', 'Handbag', 1, 3500),
-(39, 'Rohan Kapoor', 39, 6321098765, 'Vellore', 'T-Shirt', 4, 1500),
-(40, 'Geeta Menon', 30, 6210987654, 'Salem', 'Dress', 2, 3000),
-(41, 'Santosh Kumar', 45, 6109876543, 'Erode', 'Shoes', 1, 2900),
-(42, 'Bhavya Rao', 27, 6098765432, 'Karur', 'Watch', 1, 5200),
-(43, 'Kiran Das', 36, 5987654321, 'Tanjore', 'Perfume', 3, 2100),
-(44, 'Lata Sharma', 32, 5876543210, 'Cuddalore', 'Handbag', 1, 3600),
-(45, 'Nitin Verma', 38, 5765432109, 'Pondicherry', 'T-Shirt', 2, 1600),
-(46, 'Swati Iyer', 26, 5654321098, 'Kanchipuram', 'Dress', 1, 3100),
-(47, 'Arvind Raj', 35, 5543210987, 'Tuticorin', 'Shoes', 2, 2200),
-(48, 'Ruchi Nair', 28, 5432109876, 'Nagercoil', 'Watch', 1, 5300),
-(49, 'Mahesh Pillai', 42, 5321098765, 'Dindigul', 'Perfume', 2, 1800),
-(50, 'Shruti Singh', 30, 5210987654, 'Sivakasi', 'Handbag', 1, 3700);
+cus_id varchar(50) primary key,
+cus_name varchar(50),
+cus_age int,
+cust_gender varchar(50),
+cus_add varchar(50),
+cus_phone varchar(50),
+pro_name varchar(50),
+pro_cost varchar(50)
+);INSERT INTO mall (cus_id, cus_name, cus_age, cust_gender, cus_add, cus_phone, pro_name, pro_cost) VALUES
+('CUS001', 'Arun Kumar', 29, 'Male', 'Chennai', '9876543210', 'TV', '15000'),
+('CUS002', 'Divya R', 34, 'Female', 'Coimbatore', '9123456789', 'Mobile', '12000'),
+('CUS003', 'Karthik S', 23, 'Male', 'Madurai', '8897654321', 'Laptop', '35000'),
+('CUS004', 'Lakshmi N', 27, 'Female', 'Tirunelveli', '9988776655', 'Tablet', '11000'),
+('CUS005', 'Mani M', 40, 'Male', 'Salem', '9001122334', 'Telephone', '6000'),
+('CUS006', 'Priya V', 31, 'Female', 'Erode', '8899001122', 'Refrigerator', '20000'),
+('CUS007', 'Rajesh P', 35, 'Male', 'Vellore', '9870012345', 'Washing Machine', '18000'),
+('CUS008', 'Sindhu R', 28, 'Female', 'Dindigul', '9122334455', 'Microwave', '8000'),
+('CUS009', 'Vijay K', 33, 'Male', 'Namakkal', '9988223344', 'Air Conditioner', '25000'),
+('CUS010', 'Nithya S', 26, 'Female', 'Tiruchirappalli', '9009988776', 'Speaker', '7000'),
+('CUS011', 'Aishwarya M', 30, 'Female', 'Chennai', '9876543221', 'TV', '15500'),
+('CUS012', 'Balaji S', 29, 'Male', 'Coimbatore', '9123456790', 'Mobile', '12500'),
+('CUS013', 'Chitra R', 24, 'Female', 'Madurai', '8897654332', 'Laptop', '34500'),
+('CUS014', 'Deepak K', 32, 'Male', 'Tirunelveli', '9988776656', 'Tablet', '11500'),
+('CUS015', 'Ezhil V', 41, 'Male', 'Salem', '9001122335', 'Telephone', '6300'),
+('CUS016', 'Fathima J', 28, 'Female', 'Erode', '8899001123', 'Refrigerator', '21000'),
+('CUS017', 'Gokul R', 36, 'Male', 'Vellore', '9870012346', 'Washing Machine', '19000'),
+('CUS018', 'Hema S', 29, 'Female', 'Dindigul', '9122334456', 'Microwave', '8500'),
+('CUS019', 'Ilango P', 34, 'Male', 'Namakkal', '9988223345', 'Air Conditioner', '26000'),
+('CUS020', 'Jaya S', 27, 'Female', 'Tiruchirappalli', '9009988777', 'Speaker', '7200'),
+('CUS021', 'Kiran M', 31, 'Male', 'Chennai', '9876543222', 'TV', '15000'),
+('CUS022', 'Latha R', 33, 'Female', 'Coimbatore', '9123456791', 'Mobile', '12300'),
+('CUS023', 'Mohan K', 26, 'Male', 'Madurai', '8897654333', 'Laptop', '34000'),
+('CUS024', 'Nisha V', 30, 'Female', 'Tirunelveli', '9988776657', 'Tablet', '11700'),
+('CUS025', 'Oviya S', 42, 'Female', 'Salem', '9001122336', 'Telephone', '6200'),
+('CUS026', 'Palanisamy T', 35, 'Male', 'Erode', '8899001124', 'Refrigerator', '20500'),
+('CUS027', 'Ravi M', 37, 'Male', 'Vellore', '9870012347', 'Washing Machine', '18500'),
+('CUS028', 'Sangeetha R', 28, 'Female', 'Dindigul', '9122334457', 'Microwave', '8300'),
+('CUS029', 'Thiru P', 33, 'Male', 'Namakkal', '9988223346', 'Air Conditioner', '25500'),
+('CUS030', 'Usha S', 24, 'Female', 'Tiruchirappalli', '9009988778', 'Speaker', '7100'),
+('CUS031', 'Vasanth M', 29, 'Male', 'Chennai', '9876543223', 'TV', '15200'),
+('CUS032', 'Yamini R', 31, 'Female', 'Coimbatore', '9123456792', 'Mobile', '12400'),
+('CUS033', 'Zakir K', 27, 'Male', 'Madurai', '8897654334', 'Laptop', '34200'),
+('CUS034', 'Abi V', 30, 'Female', 'Tirunelveli', '9988776658', 'Tablet', '11900'),
+('CUS035', 'Bala S', 43, 'Male', 'Salem', '9001122337', 'Telephone', '6100'),
+('CUS036', 'Charu J', 26, 'Female', 'Erode', '8899001125', 'Refrigerator', '20800'),
+('CUS037', 'Dinesh R', 38, 'Male', 'Vellore', '9870012348', 'Washing Machine', '18800'),
+('CUS038', 'Esha S', 29, 'Female', 'Dindigul', '9122334458', 'Microwave', '8400'),
+('CUS039', 'Feroz P', 35, 'Male', 'Namakkal', '9988223347', 'Air Conditioner', '25800'),
+('CUS040', 'Gayathri S', 25, 'Female', 'Tiruchirappalli', '9009988779', 'Speaker', '7300'),
+('CUS041', 'Hari M', 31, 'Male', 'Chennai', '9876543224', 'TV', '15300'),
+('CUS042', 'Indhu R', 29, 'Female', 'Coimbatore', '9123456793', 'Mobile', '12600'),
+('CUS043', 'Jagan K', 28, 'Male', 'Madurai', '8897654335', 'Laptop', '34800'),
+('CUS044', 'Kala V', 32, 'Female', 'Tirunelveli', '9988776659', 'Tablet', '12000'),
+('CUS045', 'Lalitha S', 44, 'Female', 'Salem', '9001122338', 'Telephone', '6000'),
+('CUS046', 'Manoj T', 39, 'Male', 'Erode', '8899001126', 'Refrigerator', '21500'),
+('CUS047', 'Nalini R', 27, 'Female', 'Vellore', '9870012349', 'Washing Machine', '19200'),
+('CUS048', 'Omar S', 30, 'Male', 'Dindigul', '9122334459', 'Microwave', '8600'),
+('CUS049', 'Pooja P', 33, 'Female', 'Namakkal', '9988223348', 'Air Conditioner', '26500');
+select * from mall;
 
 -- Retrieve all customers where cus_age > 30.
 select *
 from mall
-where age > 30;
+where cus_age >30;
 
--- Find products where pro_cost > 5000.
+-- Find products where pro_cost > 5000
 select *
 from mall
-where cost > 5000;
+where pro_cost > 5000;
 
--- Get records where cus_add = 'Chennai'.
-select * 
-from mall 
-where address = "Chennai";
+-- Display customer names where cust_gender = 'Female'.
+select *
+from mall
+where cust_gender = "Female";
+
+-- Get records where cus_add = 'Chennai'
+select *
+from mall
+where cust_add = "Chennai";
 
 -- Show all customers whose cus_name starts with ‘A’.
 select *
 from mall
-where name like "a%";
+where cus_name like "a%";
 
 -- List customers whose cus_phone ends with ‘55’.
 select * 
 from mall
-where phone_number like "%55";
+where cus_phone like "%55";
 
--- Retrieve products where pro_name = 'Shoes'.
+-- Retrieve products where pro_name = 'TV.
 select *
 from mall
-where product_name = "Shoes";
+where pro_name = "TV";
 
--- Find all customers not from ‘Delhi’.
+-- Find all customers not from ‘Tirunelveli’.
 select *
 from mall
-where address != "Delhi";
+where cus_add != "Tirunelveli";
 
 -- Display customers where cus_age BETWEEN 20 AND 40.
 select *
 from mall
-where age between 20 and 40;
+where cus_age between 25 and 40;
 
 -- Get all records where pro_cost IS NOT NULL.
-select *
+select * 
 from mall
-where cost is not null;
--- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+where pro_cost is not null;
+
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- GROUP BY Clause
+
+-- Display total product count grouped by cust_gender
+select cust_gender, count(pro_name) as totalproduct
+from mall
+group by cust_gender;
+
+-- Find the average pro_cost for each cus_add.
+select avg(pro_cost) as pro_costsaverage, cus_add
+from mall
+group by cus_add;
+
+-- Get total customers grouped by cus_age
+
+select cus_age, count(*) as totalcustomers
+from mall
+group by cus_age;
+
+-- Find number of male and female customers.
+select count(cus_age) as totage, cust_gender
+from mall
+group by cust_gender;
+
+-- Display maximum pro_cost per cus_add
+select max(pro_cost) as maxcost,cus_name
+from mall
+group by cus_name;
