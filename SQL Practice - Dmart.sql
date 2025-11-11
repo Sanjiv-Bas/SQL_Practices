@@ -140,3 +140,60 @@ group by cust_gender;
 select max(pro_cost) as maxcost,cus_name
 from mall
 group by cus_name;
+
+-- Show minimum product cost for each city.
+select min(pro_cost),cus_add
+from mall
+group by cus_add;
+
+-- Count how many times each pro_name appears.
+select pro_name, count(pro_name)
+from mall
+group by pro_name;
+
+-- Find total purchase value grouped by cus_add
+select cus_add, sum(pro_cost) as totalcost
+from mall
+group by cus_add;
+
+-- Display average age of customers grouped by cust_gender .
+select cust_gender, avg(cus_age)
+from mall
+group by cust_gender;
+
+-- Having clause
+-- Show average pro_cost per city having average > 10000.
+select cus_add, avg(pro_cost) as averagecost
+from mall
+group by cus_add
+having averagecost > 10000;
+
+-- Get total number of customers per gender having count > 5.
+select cust_gender, count(cus_id) as total_customers
+from mall
+group by cust_gender
+having total_customers > 5;
+
+-- Display cities having more than 3 customers
+select cus_add, count(cus_id) as Totcustomer
+from mall
+group by cities
+having Totcustomer > 3;
+
+-- Show product groups having sum( pro_cost ) > 20000.
+select pro_name, sum(pro_cost) as pro_cost
+from mall
+group by pro_name
+having pro_cost >20000 ;
+
+-- Find locations having average customer age above 40.
+select cus_add, avg(cus_age) customerage 
+from mall
+group by cus_add
+having customerage > 40;
+
+-- List age groups having more than 2 customers
+select cus_age, count(cus_id) as total_customers
+from mall
+group by cus_age
+having total_customers > 2;
