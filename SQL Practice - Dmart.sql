@@ -111,9 +111,9 @@ where cus_age between 25 and 40;
 select * 
 from mall
 where pro_cost is not null;
-
--- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- ~~~~~~~~~~~~~~~~~~~~~~~
 -- GROUP BY Clause
+-- ~~~~~~~~~~~~~~~~~~~~~~~
 
 -- Display total product count grouped by cust_gender
 select cust_gender, count(pro_name) as totalproduct
@@ -160,8 +160,9 @@ group by cus_add;
 select cust_gender, avg(cus_age)
 from mall
 group by cust_gender;
-
+-- ~~~~~~~~~~~~~
 -- Having clause
+-- ~~~~~~~~~~~~~
 -- Show average pro_cost per city having average > 10000.
 select cus_add, avg(pro_cost) as averagecost
 from mall
@@ -197,3 +198,26 @@ select cus_age, count(cus_id) as total_customers
 from mall
 group by cus_age
 having total_customers > 2;
+
+select pro_cost, cust_gender, count(cust_gender) as totcus
+from mall
+group by cust_gender, pro_cost
+having pro_cost > 15000;
+
+-- Show city-wise groups having min( pro_cost ) > 1000.
+select cus_add, min(pro_cost) as minimumprocost
+from mall
+group by cus_add
+having min(pro_cost) > 1000;
+
+-- Get names of products having count > 2 in purchases
+select pro_name, count(pro_cost) as procount
+from mall
+group by pro_name
+having count(pro_cost) >2;
+
+-- Find addresses having at least one product above 20000.
+SELECT pro_name, MAX(pro_cost) AS max_cost
+FROM mall
+GROUP BY pro_name
+HAVING MAX(pro_cost) > 20000;
