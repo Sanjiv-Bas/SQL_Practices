@@ -47,9 +47,9 @@ group by sales_rep_id;
 -- Q10. Find total geo sum (lat + long) for all accounts.
 select id, name, (lat+longi)
 from accounts;
--- ~~~~~~~~~
--- accounts
--- ~~~~~~~~~
+-- ~~~~~~
+-- Count
+-- ~~~~~
 -- Q1. Count total number of accounts.
 select count(id)
 from accounts;
