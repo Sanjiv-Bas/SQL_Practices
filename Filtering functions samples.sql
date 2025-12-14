@@ -267,11 +267,31 @@ from accounts
 where website is not null;
 
 -- 🟠 F. HAVING — Questions + Answers
+
 -- 1. Count accounts per sales_rep_id > 1
 select sales_rep_id, count(*) 
 from accounts
 group by sales_rep_id
 having count(*)>1;
 
+Count number of accounts handled by each sales_rep_id
+select count(id) as IDCount, sales_rep_id
+from accounts
+group by sales_rep_id;
+
+-- 🟠2. Find how many companies each primary_poc manages
+select count(name), primary_poc
+from accounts
+group by primary_poc;
+
+-- 🟠3. Group accounts by website domain and count them
+select website, count(*) as account_count
+from accounts
+group by website;
+
+--🟠4. Group accounts by first letter of name and show counts
+select left(name,1) as first_letter, count(name) as Namecount
+from accounts
+group by first_letter;
 
 
