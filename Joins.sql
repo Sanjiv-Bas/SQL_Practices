@@ -1,46 +1,77 @@
-create database Join_or_InnerJoin;
-use Join_or_InnerJoin;
-create table student
-(
-RollNo varchar(10) primary key,
-StudName varchar(10));
-SET SQL_SAFE_UPDATES = 0; 
-drop table student;
-insert into student values( "S00044", "Narayanan");
-select * from student;
-select * from age_detail;
-select * from subjects;
-create table age_detail
-(
-RollNo varchar(10),
-Age int,
-foreign key (RollNo) references Student(RollNo)
+CREATE TABLE Employees (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    dept_id INT,
+    salary DECIMAL(10,2)
 );
-insert into age_detail values("S00041", 33);
-insert into age_detail values("S00042", 25);
-insert into age_detail values("S00043", 30);
-insert into age_detail values("S00044", 29);
-truncate table age_detail;
-drop table age_detail;
-create table subjects
-(
-RollNo varchar(10),
-MYSQL varchar(25),
-Python varchar (25),
-Java varchar (25),
-foreign key (RollNo) references Student(RollNo)
-);
-insert into subjects values( "S00041", "93", "90", "85");
-insert into subjects values( "S00042", "99", "98", "97");
-insert into subjects values( "S00043", "85", "88", "85");
-insert into subjects values( "S00044", "91", "92", "93");
--- 1. Join two columns name and age in single table
-select student.StudName, student.RollNo,age_detail.age
-from student
-inner join age_detail
-on student.RollNo = age_detail.RollNo;
--- 2. provide the students name along with the subject marks
-select student.RollNo, Student.StudName, age_detail.Age, subjects.MYSQL, subjects.Python, subjects.Java
-from student
-join age_detail on student.RollNo = age_detail.RollNo
-join subjects on student.RollNo = subjects.RollNo;
+
+CREATE TABLE Departments (
+    dept_id INT PRIMARY KEY,
+    emp_id int,
+    dept_name VARCHAR(50),
+    manager VARCHAR(50)
+   );
+   
+alter table departments
+add constraint fk_departments_emp_id
+foreign key (emp_id) references employees(emp_id);
+
+select * from departments;
+alter table Departments
+add column emp_id INT;
+
+INSERT INTO Employees (emp_id, name, dept_id, salary) VALUES
+(1, 'Rajesh Kumar', 101, 75000.00),
+(2, 'Priya Sharma', 102, 68000.50),
+(3, 'Arun Patel', NULL, 55000.00),
+(4, 'Sneha Reddy', 103, 72000.75),
+(5, 'Vikram Singh', NULL, 62000.00),
+(6, 'Meena Iyer', 101, 81000.25),
+(7, 'Karthik Nair', 104, 58000.50),
+(8, 'Anjali Gupta', NULL, 67000.00),
+(9, 'Sanjay Verma', 102, 73000.00),
+(10, 'Divya Sanjiv', 105, 59000.75);
+
+INSERT INTO Departments (dept_id,emp_id , dept_name, manager) VALUES
+(101, 1,'Sales', 'Rajesh Kumar'),
+(102, 2, 'Marketing', NULL),
+(103, 3, 'IT', 'Sneha Reddy'),
+(104, 4, 'HR', NULL),
+(105, 5, 'Finance', 'Divya');
+
+-- Need all employees with their department
+select employees.emp_id, employees.name, departments.dept_name
+from employees 
+left join departments on departments.dept_id = employees.dept_id;
+
+
+-- Need all only the null values of employees with their department 
+select employees.emp_id,employees.name, departments.dept_name
+from employees
+left join departments on departments.dept_id = employees.dept_id
+where departments.dept_name is null;
+
+-- List all employees with their department names (include employees without departments)
+select employees.emp_id,employees.name,departments.dept_name
+from employees
+left join departments on departments.dept_id = employees.dept_id;
+
+-- . Find employees who are not assigned to any department
+select employees.name,departments.dept_name
+from employees
+left join departments on departments.dept_id = employees.dept_id
+where departments.dept_name is null;
+
+-- Show all departments with their manager names (include departments without managers)
+select employees.name,departments.dept_name,departments.manager
+from employees
+left join departments on departments.dept_id = employees.dept_id;
+
+-- Need to view the null values as "Unassinged/Unknown"
+SELECT 
+    e.emp_id,
+    COALESCE(e.name, 'Unknown Employee') AS employee_name,
+    COALESCE(d.dept_name, 'Unassigned') AS department,
+    COALESCE(e.salary, 0.00) AS salary_amount
+FROM Employees e
+LEFT JOIN Departments d ON e.dept_id = d.dept_id;
