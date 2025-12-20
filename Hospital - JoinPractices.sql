@@ -144,10 +144,45 @@ from patients
 left join doctors
 on doctors.patient_id = patients.patient_id;
 
-
 -- Find patients who do NOT have any doctor assigned
 select patients.patient_name, doctors.doctor_name
 from patients
 left join doctors
 on doctors.patient_id = patients.patient_id
 where doctors.doctor_name is null;
+
+-- Display patient name, doctor name, and doctor speciality
+select patients.patient_name, doctors.doctor_name,doctors.doctor_speciality
+from patients
+left join doctors
+on doctors.patient_id = patients.patient_id;
+
+-- Get all female patients with their doctor details
+select patients.patient_name, patients.patient_gender, doctors.doctor_name, doctors.degree, doctors.doctor_speciality, doctors.doctor_department
+from patients
+left join doctors
+on doctors.patient_id = patients.patient_id;
+
+-- Show patients older than 50 and their doctors (if any)
+select patients.patient_name, patients.patient_age, doctors.doctor_name
+from patients
+left join doctors
+on doctors.patient_id = patients.patient_id;
+
+-- List patient name and doctor degree
+select patients.patient_name, doctors.degree
+from patients
+left join doctors
+on doctors.patient_id = patients.patient_id;
+
+-- Count total patients and assigned doctors
+select count(patients.patient_id) as PatientCount, count(doctors.doctor_name) as DoctorCount
+from patients
+left join doctors
+on doctors.patient_id = patients.patient_id;
+
+-- List patients with NULL doctor speciality
+select patients.patient_name, doctors.doctor_speciality
+from patients
+left join doctors
+on doctors.patient_id = patients.patient_id;
