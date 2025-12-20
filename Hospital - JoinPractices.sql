@@ -186,3 +186,5 @@ select patients.patient_name, doctors.doctor_speciality
 from patients
 left join doctors
 on doctors.patient_id = patients.patient_id;
+
+
