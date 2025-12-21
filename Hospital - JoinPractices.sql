@@ -187,4 +187,42 @@ from patients
 left join doctors
 on doctors.patient_id = patients.patient_id;
 
+--  Get all male patients with their assigned doctor names (if any)
+select patients.patient_name, patients.patient_gender , doctors.doctor_name
+from patients
+left join doctors 
+on doctors.patient_id = patients.patient_id
+where patients.patient_gender = "Male";
 
+-- List all patients who are not assigned to any doctors
+select patients.patient_name, doctors.doctor_name
+from patients
+left join doctors
+on doctors.patient_id = patients.patient_id
+where doctors.patient_id is null;
+
+-- Display all doctors along with their patient names and departments
+select patients.patient_name, doctors.doctor_name, doctors.doctor_department
+from patients
+left join doctors
+on doctors.patient_id = patients.patient_id;
+
+-- Find patients who are treated by doctors having degree 'MBBS'
+select patients.patient_name, doctors.doctor_name
+from patients
+left join doctors
+on doctors.patient_id = patients = patient_id
+and doctors.degree = "MBBS";
+
+-- Get patients younger than 30 along with their doctor details
+select patients.patient_name,patients.patient_age,doctors.doctor_name
+from patients
+left join doctors
+on doctors.patient_id = patients.patient_id
+where patients.patient_age < 30;
+
+-- Display complete doctor details for each patient
+select doctors.doctor_id, doctors.doctor_name,doctors.doctor_speciality, patients.patient_name
+from patients
+left join doctors
+on doctors.patient_id = patients.patient_id;
