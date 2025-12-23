@@ -232,3 +232,10 @@ select patients.patient_name, doctors.doctor_name
 from patients
 left join doctors on
 patients.patient_id = doctors.patient_id;
+
+-- List all patients including those without assigned doctors
+select patients.patient_name, doctors.doctor_name
+from patients
+left join doctors on 
+patients.patient_id = doctors.patient_id
+where doctors.doctor_name is null;
