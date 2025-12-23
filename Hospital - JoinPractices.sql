@@ -226,3 +226,9 @@ select doctors.doctor_id, doctors.doctor_name,doctors.doctor_speciality, patient
 from patients
 left join doctors
 on doctors.patient_id = patients.patient_id;
+
+-- Get all patients with their doctor names (if available)
+select patients.patient_name, doctors.doctor_name
+from patients
+left join doctors on
+patients.patient_id = doctors.patient_id;
