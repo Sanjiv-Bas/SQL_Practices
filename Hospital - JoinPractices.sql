@@ -239,3 +239,58 @@ from patients
 left join doctors on 
 patients.patient_id = doctors.patient_id
 where doctors.doctor_name is null;
+
+-- Find patients whose doctor department is Cardiology (include patients without doctors)
+select patients.patient_name, doctors.doctor_name, doctors.doctor_department
+from patients
+left join doctors on 
+patients.patient_id = doctors.patient_id
+where doctor_speciality = "Cardiologist";
+
+-- Display patient name and doctor name for patients living in Chennai
+select patients.patient_name,doctors.doctor_name,patients.patient_address
+from patients
+left join doctors on
+patients.patient_id = doctors.patient_id
+where patients.patient_address = "Chennai";
+
+-- List all patients with their doctor degree and speciality
+select patients.patient_name, doctors.doctor_name,doctors.degree,doctors.doctor_speciality
+from patients
+left join doctors on
+patients.patient_id = doctors.patient_id;
+
+-- Find patients whose mobile number is NULL with doctor details
+select patients.patient_name, patients.patient_mobile_number,doctors.doctor_name
+from patients
+left join doctors on
+doctors.patient_id = patients.patient_id
+where patients.patient_mobile_number is null
+and doctors.doctor_name is not null;
+
+-- Show patient name, gender, and doctor department for Female patients
+select patients.patient_name, doctors.doctor_department
+from patients
+left join doctors on 
+doctors.patient_id = doctors.doctor_id
+where patients.patient_gender = "Female";
+
+-- List patients along with doctor name where doctor degree is MD
+select patients.patient_name,doctors.doctor_name,doctors.degree
+from patients
+left join doctors on 
+doctors.patient_id = patients.patient_id;
+
+-- Display patients and doctors where patient age is NULL
+select patients.patient_name, doctors.doctor_name
+from patients
+left join doctors on 
+patients.patient_id = doctors.patient_id
+where patients.patient_age is null;
+
+-- List patient name and doctor name where patient address is Salem
+select patients.patient_name, doctors.doctor_name
+from patients
+left join doctors on
+patients.patient_id = doctors.doctor_id
+where patients.patient_address = "Salem";
