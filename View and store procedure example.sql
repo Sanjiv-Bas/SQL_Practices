@@ -12,46 +12,6 @@ CREATE TABLE Patient (
     email_id VARCHAR(100)
 );
 
-CREATE TABLE Insurance
-(
-    insurance_name VARCHAR(100),
-    insurance_id VARCHAR(10) PRIMARY KEY,
-    patient_registration_id VARCHAR(10),
-    insurance_status VARCHAR(20),
-    foreign key (patient_registration_id) references Patient(patient_registration_id)
-);
-
-CREATE TABLE Doctor (
-    doctor_reg_id VARCHAR(10) PRIMARY KEY,
-    doctor_name VARCHAR(100),
-    degree VARCHAR(20),
-    speciality VARCHAR(50),
-    doctor_location VARCHAR(100),
-    insurance_id VARCHAR(10),
-    foreign key (insurance_id) references Insurance(insurance_id)
-);
-
-CREATE TABLE Appointment (
-    AppointmentID VARCHAR(10) PRIMARY KEY,
-    AppointmentStatus enum('Scheduled', 'Cancelled', 'Completed', 'No Show'),
-    doctor_reg_id VARCHAR(10),
-    foreign key (doctor_reg_id) references Doctor(doctor_reg_id )
-);
-
-
-CREATE TABLE Billing (
-    bill_id VARCHAR(10) PRIMARY KEY,
-    patient_id VARCHAR(10),
-    AppointmentID VARCHAR(10),
-    billing_amount DECIMAL(10,2),
-    recovery_status ENUM( "Ready_to_discharge", "Medical_attention_required"),
-    payment_status VARCHAR(20),
-    payment_date DATE,
-    doctor_reg_id VARCHAR(10),
-    foreign key (patient_id) references patient(patient_registration_id),
-    foreign key (AppointmentID) references Appointment(AppointmentID)
-);
-
 INSERT INTO Patient VALUES
 ('P01','Arun Kumar','1988-05-12','Male','Adyar','9876543201','arunkumar@gmail.com'),
 ('P02','Suresh Raj','1990-08-21','Male','Saidapet','9876543202','sureshraj@gmail.com'),
@@ -129,30 +89,9 @@ INSERT INTO Patient VALUES
 ('P74','Uma Devi','1988-06-16','Female','Royapuram','9876543274','umadevi@gmail.com'),
 ('P75','Naren','1995-09-01','Male','Washermanpet','9876543275','naren@gmail.com');
 
-select * from patient;
-
-set sql_safe_updates = 0;
-
--- Update patient name to "Arun K" for patient registration ID "P01"
-update patient
-set patient_name = "Arun K"
-where patient_registration_id = "P01";
-
--- Q2. Change the address of patients from "Saidapet" to "Guindy"
-update patient
-set address = "Guindy"
-where address = "Saidapet";
-
--- Q3. Change the mobile number for patient "P10"
-update patient
-set mobile_number = "9003043090"
-where patient_name = "Balaji";
-
--- Q4. Set address as "Vyasarpadi" for patient named "Karthik"
-update patient
-set address = "Vyasarpadi"
-where patient_name = "Karthik";
--- view examples
+-- ~~~~
+-- view
+-- ~~~~
 
 create view revenue as
 select * from patient;
@@ -173,6 +112,8 @@ where gender = "male";
 create or replace view revenue as
 select * from patient
 where gender = "male" and patient_name like "a%";
+
+
 -- ~~~~~~~~~~~~~~~~~~
 --  Stored procedures
 -- ~~~~~~~~~~~~~~~~~~
