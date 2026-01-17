@@ -1,5 +1,7 @@
 create database employee_170122practice;
 use employee_170122practice;
+-- data set updaloaded
+
 select * from employee;
 describe employee;
 -- ~~~~~~~~~~~~~~~~~~~~
@@ -91,3 +93,14 @@ from employee
 where base_salary > 30000 and 
 	  join_date between "2000-01-01" and "2004-12-31";
 
+-- 7. Finance & Tamil Nadu
+select *
+from employee
+where Department = "Finance" and 
+	  state = "Tamil Nadu";
+	  
+-- 8. Finance and female
+select *
+from employee
+where Department = "Finance" and 
+	 Gender = "F";
