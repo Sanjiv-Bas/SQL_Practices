@@ -52,3 +52,60 @@ where Salary = "44400";
 select *
 from employee
 where Department != "Human Resources";
+
+-- 🔰 AND / OR / NOT – 10 Questions
+-- 1. Quality control & salary > 40000
+select *
+from employee
+where Department = "Quality Control" and 
+	  Salary > "40000";
+      
+-- 2. Tamilnadu or Karnataka
+select *
+from employee
+where state = "Tamil Nadu" or 
+	state = "Karnataka";
+    
+-- 3. provide employee list of gender is female and state is karnataka
+select *
+from employee
+where gender = "F" and State = "Karnataka";
+
+--  4. NOT HR department
+select *
+from employee
+where Department != "Human Resources";
+
+-- 5. provide the list of employees salary > 30000 AND gender is female
+select *
+from employee
+where Salary > 30000 and 
+	  Gender = "F";
+      
+-- 6. provide the list of engineering OR HR department
+select *
+from employee
+where Department = "Engineering" or
+	 Department = "Human Resources";
+     
+-- 7. provide the list of employee ID 8 and state not tamil nadu
+select *
+from employee
+where Employee_id = 8 and State <> "Tamil Nadu";
+
+-- 8. provide the list of employee belongs to Logistics department and salary >60000
+select *
+from employee
+where Department = "Logistics" and
+	 Salary > " 60000";
+     
+-- 9. NOT salary < 25000
+select *
+from employee
+where Salary < 25000;
+
+-- 10. provide the list of employee belongs to the state "Rajasthan" anb department not belongs to production
+select *
+from employee
+where State = "Rajasthan" or
+	  Department != "Production";
