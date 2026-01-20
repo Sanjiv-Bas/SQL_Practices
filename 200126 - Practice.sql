@@ -109,3 +109,43 @@ select *
 from employee
 where State = "Rajasthan" or
 	  Department != "Production";
+
+-- 🔰 DISTINCT – 10 Questions
+-- 1. Unique departments
+select distinct(departments)
+from employee;
+
+-- 2. Unique State
+select distinct(State)
+from employee;
+
+-- 3. Unique gender
+select distinct(gender)
+from employee;
+
+-- 4. Unique salaries
+select distinct(salary)
+from employee;
+
+-- 5. Unique Employee_IDs
+select distinct(Employee_Id)
+from employee;
+
+-- 6. Unique department-city combination
+select distinct(department)
+from employee;
+
+-- 7. Unique employee names
+select distinct(Name)
+from employee;
+
+-- 9. Unique cities in IT
+select distinct(department)
+from employee
+where Department = "Logistics";
+
+-- 10. Unique salaries < 40000
+select distinct(salary)
+from employee
+where Salary < 40000;
+
