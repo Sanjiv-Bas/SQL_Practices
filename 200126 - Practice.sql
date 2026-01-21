@@ -149,3 +149,33 @@ select distinct(salary)
 from employee
 where Salary < 40000;
 
+-- 🔰 4️ ORDER BY – 10 Questions
+-- 1. Salary ascending
+select *
+from employee
+order by salary asc;
+
+-- 2. Salary descending
+select *
+from employee
+order by salary desc;
+
+-- 3. provide the list of Department in descending order
+select *
+from employee
+order by department desc;
+
+-- 4. Name alphabetical
+select *
+from employee
+order by Name;
+
+-- 5. provide the list of state in descending order
+select *
+from employee
+order by state desc;
+
+-- 6. provide both department and the salary in desc order.alter
+select *
+from employee
+order by department,salary desc;
