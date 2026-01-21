@@ -179,3 +179,26 @@ order by state desc;
 select *
 from employee
 order by department,salary desc;
+
+-- 7. provide the states list in the descending order
+select *
+from employee
+order by state desc;
+
+-- 8. provide the list of logistics dept ordered by salary
+select *
+from employee
+where department = "Logistics" 
+order by Salary;
+
+-- 9. Tamilnadu employees from the warehouse staff
+select * 
+from employee
+where state = "Tamil Nadu" and
+	  Position = "Warehouse Staff";
+
+-- 10. Provide the engineerwise salary
+select *
+from employee
+where Department = "Engineering"
+order by salary asc;
