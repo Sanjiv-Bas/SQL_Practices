@@ -1,6 +1,7 @@
 -- View
 -- ~~~~
--- View is a virtual table  in MYSQL that will be created by using the queries. It does not not store data physically, only display the data from one or more tables.
+-- View is a virtual table  in MYSQL that will be created by using the queries. It does not not store data physically, 
+only display the data from one or more tables.
 
 create database empsal;
 use empsal;
