@@ -81,7 +81,8 @@ select * from school;
 -- ✅ 1. WHERE (10 Questions & Answers)
 -- 1. Q: Madurai-la irukkura students list pannu
 select stu_name 
-from school;
+from school
+where stu_loc = "Madurai";
 
 -- 2. Q: Age 15 students details
 select *
