@@ -77,3 +77,53 @@ INSERT INTO school VALUES
 (63,'Muthu',15,9000000063,'Madurai',9,3,'Sri Ram School','Chennai');
 
 select * from school;
+
+-- ✅ 1. WHERE (10 Questions & Answers)
+-- 1. Q: Madurai-la irukkura students list pannu
+select stu_name 
+from school;
+
+-- 2. Q: Age 15 students details
+select *
+from school
+where stu_age = 15;
+
+-- 3. Q: Standard 10 students
+select *
+from school
+where standard = 10;
+
+-- 4. Q: Rank 1 students
+select *
+from school
+where `rank`= 1;
+
+-- 5. Q: Chennai students
+select *
+from school
+where stu_loc = "Chennai";
+
+-- 6. Q: Age greater than 14
+select *
+from school
+where stu_age > 14;
+
+-- 7. Q: Standard less than 5
+select * 
+from school
+where standard < 5;
+
+-- 8. Q: Velammal school students
+select *
+from school
+where school_name = "Velammal Matric School";
+
+-- 9. Q: Student id above 50
+select *
+from school
+where stu_id > 50;
+
+-- 10. Q: Age 7 students
+select *
+from school
+where stu_age = 7;
