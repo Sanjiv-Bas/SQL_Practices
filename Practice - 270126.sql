@@ -128,3 +128,70 @@ where stu_id > 50;
 select *
 from school
 where stu_age = 7;
+
+-- ✅ 2. AND (10 Questions & Answers)
+
+-- 1. Q: Madurai-la irundhu standard 9 students
+select * 
+from school
+where stu_loc = "Madurai" and 
+	  standard = 9;
+      
+-- 2. Q: Age 15 and rank 3
+select *
+from school
+where stu_age = 15 and 
+	`rank` = 3;
+    
+-- 3. Q: Chennai school-la standard 10
+select *
+from school
+where school_location = "Chennai" and
+	standard = 10;
+    
+-- 4. Q: Age 13 to 15 students
+select *
+from school
+where stu_age between 13 and 15;
+
+-- or
+select *
+from school
+where stu_age >=13 and 
+	stu_age <=15;
+    
+-- 5. Q: Erode students with rank 2
+select *
+from school
+where stu_loc = "Erode" and 
+		`rank` = 2;
+        
+-- 6. Q: Standard 1 and age 7
+select *
+from school
+where standard = 1 and 
+	stu_age = 7;
+    
+-- 7. Q: Bharathi school rank 1 students
+select *
+from school
+where school_name like "Bhara%" and 
+	`rank` = 1;
+    
+-- 8. Q: Salem standard 11 students
+select *
+from school
+where stu_loc = "Salem" and 
+	standard = 11;
+    
+-- 9. Q: Age >=10 and standard >=4
+select *
+from school
+where stu_age >=10 and 
+	standard >= 4;
+
+-- 10. Q: Rank ≤3 and standard ≥8
+select *
+from school
+where `rank` <= 3 and
+	standard >= 8;
