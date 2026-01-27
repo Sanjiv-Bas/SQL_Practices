@@ -78,7 +78,7 @@ INSERT INTO school VALUES
 
 select * from school;
 
--- ✅ 1. WHERE (10 Questions & Answers)
+-- ✅. WHERE (10 Questions & Answers)
 -- 1. Q: Madurai-la irukkura students list pannu
 select stu_name 
 from school
