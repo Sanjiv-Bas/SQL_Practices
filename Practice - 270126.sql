@@ -256,4 +256,54 @@ from school
 where stu_loc = "Madurai" or
 	school_location = "Coimbatore";
 
+-- ✅ 4. NOT (10 Questions & Answers)
+-- 1. Q: Chennai-la illadha students
+select *
+from school
+where stu_loc != chennai;
+
+-- 2. Q: Standard 10 illaadha students
+select *
+from school
+where standard != 10;
+
+-- 3. Q: Rank 1 illaadha students
+select stu_name
+from school
+where `rank` != 1;
+
+-- 4. Q: Sri Ram school-la illaadha students
+select *
+from school
+where school_name like "Sri Ram%";
+
+-- 5. Q: Age 15 illaadha students
+select *
+from school
+where stu_age != 15;
+
+-- 6. Q: Madurai-la illaadha students
+select *
+from school
+where stu_loc != "Madurai";
+
+-- 7. Q: Standard 1 to 5-ku veliyila irukkura students
+select *
+from school
+where standard not between 1 and 5;
+
+-- 8. Q: Rank 1,2,3 illaadha students
+select *
+from school
+where standard not in(1,2,3);
+
+-- 9. Q: ID ≥30 students
+select *
+from school
+where stu_id >= 30;
+
+-- 10. Q: Chennai school-la illaadha students
+select *
+from school
+where school_location != Chennai;
 
