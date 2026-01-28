@@ -79,7 +79,7 @@ INSERT INTO school VALUES
 select * from school;
 
 -- ✅. WHERE (10 Questions & Answers)
--- 1. Q: Madurai-la irukkura students list pannu
+-- 1. Q: List of Madurai-students
 select stu_name 
 from school
 where stu_loc = "Madurai";
@@ -257,42 +257,42 @@ where stu_loc = "Madurai" or
 	school_location = "Coimbatore";
 
 -- ✅ 4. NOT (10 Questions & Answers)
--- 1. Q: Chennai-la illadha students
+-- 1. Q: Student not belongs to chennai
 select *
 from school
 where stu_loc != chennai;
 
--- 2. Q: Standard 10 illaadha students
+-- 2. Q: Students not belongs to 10th standard
 select *
 from school
 where standard != 10;
 
--- 3. Q: Rank 1 illaadha students
+-- 3. Q: Student list except 1st rank
 select stu_name
 from school
 where `rank` != 1;
 
--- 4. Q: Sri Ram school-la illaadha students
+-- 4. Q: Students not belongs to Sri Ram school
 select *
 from school
 where school_name like "Sri Ram%";
 
--- 5. Q: Age 15 illaadha students
+-- 5. Q: Students list except Age 15
 select *
 from school
 where stu_age != 15;
 
--- 6. Q: Madurai-la illaadha students
+-- 6. Q: Students list does not belongs to Madurai
 select *
 from school
 where stu_loc != "Madurai";
 
--- 7. Q: Standard 1 to 5-ku veliyila irukkura students
+-- 7. Q: Students list excep the standard 1 to 5
 select *
 from school
 where standard not between 1 and 5;
 
--- 8. Q: Rank 1,2,3 illaadha students
+-- 8. Q: Students not in the Rank 1,2,3 
 select *
 from school
 where standard not in(1,2,3);
@@ -302,23 +302,23 @@ select *
 from school
 where stu_id >= 30;
 
--- 10. Q: Chennai school-la illaadha students
+-- 10. Q: Students list except chennai
 select *
 from school
 where school_location != Chennai;
 
 -- ✅ 5. IN (10 Questions & Answers)
--- 1. Q: Madurai & Salem students
+-- 1. Q: Students list of Madurai & Salem 
 select *
 from school
 where stu_loc in ("Madurai","Salem");
 
--- 2. Q: Standard 8,9,10
+-- 2. Q:Students list of the Standard 8,9,10
 select *
 from school
 where standard in (8,9,10);
 
--- 3. Q: Rank 1 & 2
+-- 3. Q:Students list who come between rank 1 & 2
 select *
 from school
 where `rank` in (1,2);
@@ -328,7 +328,7 @@ select *
 from school
 where stu_age in (7,17);
 
--- 5. Q: Chennai & Madurai schools
+-- 5. Q:Student list of Chennai & Madurai schools
 select *
 from school
 where school_location in (Chennai, Madurai);
@@ -358,107 +358,6 @@ select *
 from school
 where stu_age in (10,11,12);
 
--- ✅ 5. IN (10 Questions & Answers)
--- 1. Q: Madurai & Salem students
-select *
-from school
-where stu_loc in ("Madurai","Salem");
-
--- 2. Q: Standard 8,9,10
-select *
-from school
-where standard in (8,9,10);
-
--- 3. Q: Rank 1 & 2
-select *
-from school
-where `rank` in (1,2);
-
--- 4. Q: Age 7 & 17
-select *
-from school
-where stu_age in (7,17);
-
--- 5. Q: Chennai & Madurai schools
-select *
-from school
-where school_location in (Chennai, Madurai);
-
--- 6. Q: ID 1,10,20
-select *
-from school
-where stu_id in (1,10,20);
-
--- 7. Q: Standard 1 or 12
-select *
-from school
-where standard in (1,12);
-
--- 8. Q: Rank 4,5,6
-select *
-from school
-where `rank` in (4,5,6);
-
--- 9. Q: Erode & Karur students
-select *
-from school
-where stu_loc in ("Erode","Karur");
-
--- 10. Q: Age 10,11,12
-select *
-from school
-where stu_age in (10,11,12);
-
--- ✅ 5. IN (10 Questions & Answers)
--- 1. Q: Madurai & Salem students
-select *
-from school
-where stu_loc in ("Madurai","Salem");
-
--- 2. Q: Standard 8,9,10
-select *
-from school
-where standard in (8,9,10);
-
--- 3. Q: Rank 1 & 2
-select *
-from school
-where `rank` in (1,2);
-
--- 4. Q: Age 7 & 17
-select *
-from school
-where stu_age in (7,17);
-
--- 5. Q: Chennai & Madurai schools
-select *
-from school
-where school_location in (Chennai, Madurai);
-
--- 6. Q: ID 1,10,20
-select *
-from school
-where stu_id in (1,10,20);
-
--- 7. Q: Standard 1 or 12
-select *
-from school
-where standard in (1,12);
-
--- 8. Q: Rank 4,5,6
-select *
-from school
-where `rank` in (4,5,6);
-
--- 9. Q: Erode & Karur students
-select *
-from school
-where stu_loc in ("Erode","Karur");
-
--- 10. Q: Age 10,11,12
-select *
-from school
-where stu_age in (10,11,12);
 
 -- ✅ 6. BETWEEN (10 Questions & Answers)
 -- 1. Q: Age 10 to 15
