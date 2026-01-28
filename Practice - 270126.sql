@@ -307,3 +307,208 @@ select *
 from school
 where school_location != Chennai;
 
+-- ✅ 5. IN (10 Questions & Answers)
+-- 1. Q: Madurai & Salem students
+select *
+from school
+where stu_loc in ("Madurai","Salem");
+
+-- 2. Q: Standard 8,9,10
+select *
+from school
+where standard in (8,9,10);
+
+-- 3. Q: Rank 1 & 2
+select *
+from school
+where `rank` in (1,2);
+
+-- 4. Q: Age 7 & 17
+select *
+from school
+where stu_age in (7,17);
+
+-- 5. Q: Chennai & Madurai schools
+select *
+from school
+where school_location in (Chennai, Madurai);
+
+-- 6. Q: ID 1,10,20
+select *
+from school
+where stu_id in (1,10,20);
+
+-- 7. Q: Standard 1 or 12
+select *
+from school
+where standard in (1,12);
+
+-- 8. Q: Rank 4,5,6
+select *
+from school
+where `rank` in (4,5,6);
+
+-- 9. Q: Erode & Karur students
+select *
+from school
+where stu_loc in ("Erode","Karur");
+
+-- 10. Q: Age 10,11,12
+select *
+from school
+where stu_age in (10,11,12);
+
+-- ✅ 5. IN (10 Questions & Answers)
+-- 1. Q: Madurai & Salem students
+select *
+from school
+where stu_loc in ("Madurai","Salem");
+
+-- 2. Q: Standard 8,9,10
+select *
+from school
+where standard in (8,9,10);
+
+-- 3. Q: Rank 1 & 2
+select *
+from school
+where `rank` in (1,2);
+
+-- 4. Q: Age 7 & 17
+select *
+from school
+where stu_age in (7,17);
+
+-- 5. Q: Chennai & Madurai schools
+select *
+from school
+where school_location in (Chennai, Madurai);
+
+-- 6. Q: ID 1,10,20
+select *
+from school
+where stu_id in (1,10,20);
+
+-- 7. Q: Standard 1 or 12
+select *
+from school
+where standard in (1,12);
+
+-- 8. Q: Rank 4,5,6
+select *
+from school
+where `rank` in (4,5,6);
+
+-- 9. Q: Erode & Karur students
+select *
+from school
+where stu_loc in ("Erode","Karur");
+
+-- 10. Q: Age 10,11,12
+select *
+from school
+where stu_age in (10,11,12);
+
+-- ✅ 5. IN (10 Questions & Answers)
+-- 1. Q: Madurai & Salem students
+select *
+from school
+where stu_loc in ("Madurai","Salem");
+
+-- 2. Q: Standard 8,9,10
+select *
+from school
+where standard in (8,9,10);
+
+-- 3. Q: Rank 1 & 2
+select *
+from school
+where `rank` in (1,2);
+
+-- 4. Q: Age 7 & 17
+select *
+from school
+where stu_age in (7,17);
+
+-- 5. Q: Chennai & Madurai schools
+select *
+from school
+where school_location in (Chennai, Madurai);
+
+-- 6. Q: ID 1,10,20
+select *
+from school
+where stu_id in (1,10,20);
+
+-- 7. Q: Standard 1 or 12
+select *
+from school
+where standard in (1,12);
+
+-- 8. Q: Rank 4,5,6
+select *
+from school
+where `rank` in (4,5,6);
+
+-- 9. Q: Erode & Karur students
+select *
+from school
+where stu_loc in ("Erode","Karur");
+
+-- 10. Q: Age 10,11,12
+select *
+from school
+where stu_age in (10,11,12);
+
+-- ✅ 6. BETWEEN (10 Questions & Answers)
+-- 1. Q: Age 10 to 15
+select *
+from school
+where stu_age between 10 and 15;
+
+-- 2. Q: Standard 5 to 8
+select *
+from school
+where standard between 5 and 8;
+
+-- 3. Q: Rank 1 to 3
+select *
+from school
+where `rank` between 1 and 3;
+
+-- 4. Q: ID 20 to 30
+select *
+from school
+where stu_id between 20 and 30;
+
+-- 5. Q: Age 7 to 9
+select *
+from school
+where stu_age between 7  and 9;
+
+-- 6. Q: Standard 10 to 12
+select *
+from school
+where standard between 10 and 12;
+
+-- 7. Q: Rank 4 to 6
+select *
+from school
+where `rank` between 4 and 6;
+
+-- 8. Q: ID 1 to 10
+select *
+from school
+where stu_id between 1 and 10;
+
+-- 9. Q: Age 13 to 17
+select *
+from school
+where stu_age between 13 and 17;
+
+-- 10. Q: Standard 1 to 3
+select *
+from school
+where standard between 1 and 3;
+
+ 
