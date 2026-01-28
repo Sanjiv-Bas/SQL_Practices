@@ -511,4 +511,3 @@ select *
 from school
 where standard between 1 and 3;
 
- 
