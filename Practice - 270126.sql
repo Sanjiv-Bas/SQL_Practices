@@ -195,3 +195,65 @@ select *
 from school
 where `rank` <= 3 and
 	standard >= 8;
+
+-- ✅ 3. OR (10 Questions & Answers)
+-- 1. Q: Madurai or Chennai students
+select *
+from school
+where stu_loc = "Madurai" or
+	school_location = "Chennai";
+    
+-- 2. Q: Standard 10 or 11
+select *
+from school
+where standard = 10 or
+	standard = 11;
+    
+-- 3. Q: Rank 1 or 2
+select *
+from school
+where `rank` = 1 or `rank` = 2;
+
+-- 4. Q: Age 7 or 17
+select *
+from school
+where stu_age = 7 or
+	stu_age = 17;
+    
+-- 5. Q: Sri Ram or Velammal school
+select *
+from school
+where school_name like "Sri Ram%" or
+	school_name like "Velammal%";
+    
+-- 6. Q: Erode or Salem students
+select *
+from school
+where stu_loc = "Erode" or
+	stu_loc = "Salem";
+
+-- 7. Q: Standard <3 or >10
+select *
+from school
+where standard < 3 or 
+	standard > 10;
+
+-- 8. Q: Rank 5 or 6
+select *
+from school
+where `rank` = 5 or
+	`rank` = 6;
+    
+-- 9. Q: ID <10 or >60
+select *
+from school
+where stu_id < 10 or
+	stu_id >60;
+    
+-- 10. Q: Madurai or Coimbatore schools
+select *
+from school
+where stu_loc = "Madurai" or
+	school_location = "Coimbatore";
+
+
