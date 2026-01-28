@@ -410,3 +410,53 @@ select *
 from school
 where standard between 1 and 3;
 
+-- ✅ 7. LIKE (10 Questions & Answers)
+-- 1. Q: Name starting with "S"
+select *
+from school
+where stu_name like "s%";
+
+-- 2. Q: Name ending with "A"
+select *
+from school
+where stu_name like "a%";
+
+-- 3. Q: Name consist of "an"
+select *
+from school
+where stu_name like "%an%";
+
+-- 4. Q: Location ‘Ma’-la start aaguradhu
+select *
+from school
+where stu_loc like "Ma%";
+
+-- 5. Q: School name-la ‘Matric’ word irukkura students
+select *
+from school
+where school_name like "Matric%";
+
+-- 6. Q: Name 5 letters irukkura students
+select *
+from school
+where stu_name like "_____";
+
+-- 7. Q: Student list ending with e
+select *
+from school
+where stu_loc like "e%";
+
+-- 8. Q: Name second letter ‘a’
+select *
+from school
+where stu_name like "__%";
+
+-- 9. Q: School location starting with "C"
+select *
+from school
+where school_location like "C%";
+
+-- 10. Q: Name list consist "th"
+select *
+from school
+where stu_name like "%th%";
