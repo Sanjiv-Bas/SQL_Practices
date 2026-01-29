@@ -605,5 +605,4 @@ select school_location, count(*)
 from school
 group by school_location;
 
-
-
+✅ 11. SUM / AVG / COUNT / MAX / MIN (10 Q&A EACH – COMBINED)
