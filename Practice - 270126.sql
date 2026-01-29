@@ -460,3 +460,31 @@ where school_location like "C%";
 select *
 from school
 where stu_name like "%th%";
+-- ✅ 8. ORDER BY (10 Questions & Answers)
+-- 1. Q: Age ascending order
+select *
+from school
+order by stu_age asc;
+
+-- 2. Q: Age descending
+select *
+from school
+order by stu_age desc;
+
+-- 3. Q: Name alphabetical order
+select stu_name 
+from school
+order by stu_name asc;
+
+-- 4. Q: Standard descending
+select *
+from school
+order by standard desc;
+
+-- 5. Q: Rank ascending
+select *
+from school
+order by rank desc;
+
+-- 6. Q: Location ascending
+
