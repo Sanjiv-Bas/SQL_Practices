@@ -487,4 +487,27 @@ from school
 order by rank desc;
 
 -- 6. Q: Location ascending
+select * 
+from school
+order by stu_loc asc;
+
+-- 7. Q: School name descending
+select *
+from school
+order by school_location desc;
+
+-- 8. Q: Age then rank order
+select *
+from school
+order by stu_age, `rank` asc;
+
+-- 9. Q: Standard then name
+select *
+from school
+order by standard asc;
+
+-- 10. Q: ID descending
+select *
+from school
+order by stu_id desc;
 
