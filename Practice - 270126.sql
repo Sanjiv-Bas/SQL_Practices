@@ -460,6 +460,7 @@ where school_location like "C%";
 select *
 from school
 where stu_name like "%th%";
+
 -- ✅ 8. ORDER BY (10 Questions & Answers)
 -- 1. Q: Age ascending order
 select *
@@ -484,7 +485,7 @@ order by standard desc;
 -- 5. Q: Rank ascending
 select *
 from school
-order by rank desc;
+order by `rank` desc;
 
 -- 6. Q: Location ascending
 select * 
@@ -510,4 +511,47 @@ order by standard asc;
 select *
 from school
 order by stu_id desc;
+
+-- ✅ 9. DISTINCT (10 Questions & Answers)
+-- 1. Q: Unique locations
+select distinct(school_location)
+from school;
+
+-- 2. Q: Unique standards
+select distinct(standard)
+from school; 
+
+-- 3. Q: Unique school names
+select distinct(school_name)
+from school;
+
+-- 4. Q: Unique school locations
+select distinct(school_location)
+from school;
+
+-- 5. Q: Unique ranks
+select distinct(`rank`) as Rrank
+from school;
+
+-- 6. Q: Unique ages
+select distinct(stu_age)
+from school;
+
+-- 7. Q: Unique city + standard
+select distinct stu_loc, standard
+from school;
+
+-- 8. Q: Unique name initials
+select distinct left(stu_name,1)
+from school;
+
+-- 9. Q: Unique school & location
+select distinct school_name,school_location
+from school;
+
+-- 10. Q: Unique standards above 8
+select distinct(standard)
+from school
+where standard > 8;
+
 
