@@ -554,4 +554,56 @@ select distinct(standard)
 from school
 where standard > 8;
 
+-- ✅ 10. GROUP BY (10 Questions & Answers)
+-- 1. Q: Count students per location
+select count(stu_id) as stu_name,stu_loc
+from school
+group by stu_loc;
+
+-- 2. Q: Count per standard
+select standard, count( distinct standard)
+from school
+group by standard;
+
+-- 3. Q: Count per school
+select school_name, count(stu_name) as Stud_count
+from school
+group by school_name;
+
+-- 4. Q: Avg age per standard
+select avg(stu_age), standard
+from school
+group by standard;
+
+-- 5. Q: Max age per school
+select school_name, max(stu_age)
+from school
+group by school_name;
+
+-- 6. Q: Min rank per standard
+select min(`rank`), standard
+from  school
+group by standard;
+
+-- 7. Q: Students count per age
+select stu_age, count(stu_id) as StuCount
+from school
+group by stu_age;
+
+-- 8. Q: School count per location
+select school_location, count(distinct school_name)
+from school
+group by school_location;
+
+-- 9. Q: Avg rank per school
+select avg(`rank`), school_name
+from school
+group by school_name;
+
+-- 10. Q: Count per school location
+select school_location, count(*)
+from school
+group by school_location;
+
+
 
