@@ -605,4 +605,44 @@ select school_location, count(*)
 from school
 group by school_location;
 
-✅ 11. SUM / AVG / COUNT / MAX / MIN (10 Q&A EACH – COMBINED)
+-- ✅ 11. SUM / AVG / COUNT / MAX / MIN (10 Q&A EACH – COMBINED)
+-- 1. Q: Total students count
+select count(stu_id)
+from school;
+
+-- 2. Q: Average age
+select avg(stu_age)
+from school;
+
+-- 3. Q: Maximum age
+select max(stu_age)
+from school;
+
+-- 4. Q: Minimum age
+select min(stu_age)
+from school;
+
+-- 5. Q: Total rank sum
+select sum(`rank`)
+from school;
+
+-- 6. Q: Count students in Chennai
+select count(stu_id)
+from school
+where school_location= "Chennai";
+
+-- 7. Q: Avg rank
+select avg(`rank`)
+from school;
+
+-- 8. Q: Max rank
+select max(`rank`)
+from school;
+
+-- 9. Q: Min rank
+select min(`rank`)
+from school;
+
+-- 10. Q: Sum of ages
+select sum(stu_age)
+from school;
