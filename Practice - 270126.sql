@@ -646,3 +646,44 @@ from school;
 -- 10. Q: Sum of ages
 select sum(stu_age)
 from school;
+
+-- ✅ 12. IF (10 Questions & Answers)
+-- 1. Q: Age >=15 → Senior else Junior
+select stu_name, if(stu_age >= 15,"Seniour","Junior")
+from school;
+
+-- 2. Q: Rank 1 → Topper
+select stu_name,`rank`, if(`rank` = 1,"Topper","Normal")
+from school;
+
+-- 3. Q: Standard >=10 → Higher class
+select stu_name, if(standard >= 10,"Higher Class","Lower")
+from school;
+
+-- 4. Q: Chennai → City student
+select stu_name, school_location,if(school_location = "Chennai","City Student","Other")
+from school;
+
+-- 5. Q: Age <10 → Kid
+select stu_name, if(stu_age <10,"Kid", "Teen")
+from school;
+
+-- 6. Q: Rank <=3 → Merit
+select stu_name, if(`rank` <= 3,"Merit","Average")
+from school;
+
+-- 7. Q: Velammal school check
+select stu_name, if(school_name like "Velammal%","Yes","No")
+from school;
+
+-- 8. Q: Standard 1 → Beginner
+select stu_name, if(standard = 1,"Beginner","Continuing")
+from school;
+
+-- 9. Q: Age =17 → Final year
+select stu_name, if(stu_age >= 17, "Final year","Below final")
+from school;
+
+-- 10. Q: Rank >4 → Needs improvement
+select stu_name, if(`rank` > 4 , "Need improvement", "Good")
+from school;
