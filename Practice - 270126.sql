@@ -687,3 +687,4 @@ from school;
 -- 10. Q: Rank >4 → Needs improvement
 select stu_name, if(`rank` > 4 , "Need improvement", "Good")
 from school;
+
