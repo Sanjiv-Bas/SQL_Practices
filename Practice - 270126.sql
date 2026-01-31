@@ -688,3 +688,66 @@ from school;
 select stu_name, if(`rank` > 4 , "Need improvement", "Good")
 from school;
 
+-- ✅ GROUP BY – Next 10 Questions & Answers (11–20)
+
+-- 1. Q:How many students are there in each school?
+select distinct(school_name),count(school_name)
+from school
+group by school_name;
+
+-- 2 Q: How many unique schools are there in each standard?
+select standard, count(distinct school_name)
+from school
+group by standard;
+
+-- 3. Q: Location-wise average student age
+select avg(stu_age), school_location
+from school
+group by school_location;
+
+-- 4. Q: Each standard-la students count
+select distinct(standard), count(stu_id)
+from school
+group by standard;
+
+-- 5. Q: Each school-la highest rank
+select max(`rank`), school_name
+from school
+group by school_name;
+
+-- 6. Q: School-wise minimum age
+select min(stu_age),school_name
+from school
+group by school_name;
+
+-- 7. Q: Location-wise students count (ONLY rank irukkura students)
+select count(stu_id),school_location
+from school
+where `rank` is not null
+group by school_location;
+
+-- 8. Q: Standard-wise average rank
+select avg(`rank`), standard
+from school
+group by standard;
+
+-- 9. Q: How many students in each school
+select count(standard),school_name
+from school
+group by school_name;
+
+-- 10. Q: Age-wise unique schools count
+select COUNT(distinct school_name) AS SchoolCount,  stu_age
+from school
+GROUP BY STU_AGE;
+
+-- 11. Q: Location-wise maximum standard
+select max(standard),school_location
+from school
+group by school_location;
+
+-- 12. Q: student count in each standard
+select standard, count(stu_id) as StudentsCount
+from school
+group by standard;
+
