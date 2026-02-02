@@ -122,5 +122,71 @@ from patient
 where Hospital_location = "Chennai" and
 	Appointment_Status  =  "Completed" and 
    Treatment_Stage      =  "Recovered";
-	
+
+-- ✅ OR – 10 Questions & Answers
+-- Q1. List of Diabetes OR BP patients
+select *
+from patient
+where Disease ="BP" or
+	Disease ="Diabetes"; 
+-- or
+select *
+from patient
+where Disease in ("Diabetes","BP");
+    
+-- Q2. List of Chennai OR Coimbatore hospitals
+select *
+from patient
+where Hospital_location = "Chennai" or
+	Hospital_location = "Coimbatore";
+    
+-- Q3. List of patient  having the appointment Pending OR Scheduled appointments
+select *
+from patient
+where Appointment_Status = "Pending" or 
+	Appointment_Status = "Scheduled";
+    
+-- Q4. List of Asthma OR Fever patient
+select *
+from patient
+where disease = "Asthma" or
+	 disease = "Fever";
+     
+-- Q5. Billing < 2000 OR > 15000
+select *
+from patient
+where Billing_Amount < 2000 or 
+	Billing_Amount > 15000;
+    
+-- Q6 List of patients in Madurai OR Salem hospital
+select *
+from patient
+where Hospital_location = "Madurai" or
+	Hospital_location="Salem";
+    
+-- Q7 list of patient in Diagnosis status OR in Critical stage
+select *
+from patient
+where Treatment_Stage = "Diagnosis" or	
+	Treatment_Stage = "Critical";
+    
+-- Q8 List of Apollo OR Fortis hospital
+select *
+from patient
+where Hospital_name = "Apollo" or
+	Hospital_name = "Fortis";
+    
+-- Q9.List of Covid OR Diabetes patients
+select *
+from patient
+where Disease = "Covid" or
+	Disease = "Diabetes";
+    
+-- Q10. Completed OR Cancelled
+select *
+from patient
+where Appointment_Status = "Completed" or
+	Appointment_Status = "Pending";
+
+
     
