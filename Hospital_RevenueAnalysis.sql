@@ -262,4 +262,28 @@ where not Pt_Gender = "Male";
 select *
 from patient
 where not PT_AddressLocation = "Saidapet";
-       
+
+-- 6. Get patients whose name is not Divya.
+select *
+from patient
+where not PT_Name = "Divya";
+
+-- 7. Retrieve patients not aged between 20 and 40.
+select *
+from patient
+where not PT_Age between 20 and 40;
+
+-- 8. Find patients not from Tambaram.
+select *
+from patient
+where not PT_AddressLocation = "Tambaram";
+
+-- 9. Retrieve non-female patients aged above 50.
+select * 
+from patient
+where not Pt_Gender = "Female" and not PT_Age < 51;
+
+-- 10. Find patients who are neither male nor from Adyar.
+select *
+from patient
+where not Pt_Gender = "Male" and not PT_AddressLocation = "Adyar";
