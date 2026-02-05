@@ -236,4 +236,30 @@ where PT_Age < 20 or
 select *
 from patient
 where Pt_Gender = "Male" or PT_AddressLocation = "Chromepet";
+
+-- NOT – 10 Interview Questions & Answers
+-- 1. Retrieve patients who are not female.
+select *
+from patient
+where not Pt_Gender = "Female";
+
+-- 2. Find patients who are not from Adyar.
+select *
+from patient
+where not PT_AddressLocation = "Adyar";
+
+-- 3. Get patients whose age is not 30.
+select *
+from patient
+where not PT_Age = "30";
+
+-- 4. Retrieve patients who are not male.
+select *
+from patient
+where not Pt_Gender = "Male";
+
+-- 5. Find patients not living in Saidapet.
+select *
+from patient
+where not PT_AddressLocation = "Saidapet";
        
