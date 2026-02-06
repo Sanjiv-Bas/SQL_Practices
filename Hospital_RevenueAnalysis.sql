@@ -431,3 +431,53 @@ where PT_Age between 40 and 60;
 select count(PT_ID) as patientcount
 from patient
 where PT_AddressLocation = "Tambaram";
+
+-- ✔ SUM – 10 Questions & Answers
+-- Q1. Find total age of all patients.
+select sum(Pt_Age)
+from patient;
+
+-- Q2. Sum of ages of male patients.
+select sum(Pt_Age)
+from patient
+where Pt_Gender = "Male";
+
+-- Q3. Sum of ages of female patients.
+select sum(Pt_Age)
+from patient
+where Pt_Gender = "Female";
+
+-- Q4. Total age of patients from Saidapet.
+select sum(Pt_Age)
+from patient
+where PT_AddressLocation = "Saidapet";
+
+-- Q5. Total age of patients above 60.
+select sum(PT_Age)
+from patient
+where PT_Age > 60;
+
+-- Q6. Total age of patients below 30.
+select sum(PT_Age)
+from patient
+where PT_Age > 30;
+
+-- Q7. Total age of patients from Adyar.
+select sum(Pt_Age)
+from patient
+where PT_AddressLocation = "Adyar";
+
+-- Q8. Sum of ages for patients between 30 and 50.
+Select sum(PT_Age) 
+from patient
+where PT_Age between 30 and 60;
+
+-- Q9. Total age of male patients from Guindy.
+select sum(PT_Age)
+from patient
+where Pt_Gender = "Male" and PT_AddressLocation = "Guindy";
+
+-- Q10. Sum of ages of female patients from Velachery.
+select sum(PT_Age)
+from patient
+where Pt_Gender = "Female" and PT_AddressLocation = "Velachery";
