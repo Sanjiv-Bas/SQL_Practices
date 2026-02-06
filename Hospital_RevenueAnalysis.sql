@@ -342,3 +342,92 @@ select distinct(PT_AddressLocation)
 from patient
 where PT_AddressLocation in ("Saidapet","Adyar");
 
+-- ✔ ALIASES (AS) – 10 Questions & Answers
+-- Q1. Display patient name as Name.
+select PT_Name as `Name`
+from patient;
+
+-- Q2. Show age column as Age.
+Select PT_Age as Age
+from patient;
+
+-- Q3. Display address as Location.
+Select PT_AddressLocation as Location
+from patient;
+
+-- Q4. Show name and gender with readable column names.
+select PT_Name as `Name`, PT_Age as `Age`
+from patient;
+
+-- Q5. Display mobile number as ContactNumber.
+select PT_MobileNumber as ContactNumber
+from patient;
+
+-- Q6. Show patient id as PatientID.
+select Pt_ID as PatienID
+from patient;
+
+-- Q7. Display patient name and age using aliases.
+Select PT_Name as PatientName, PT_Age as PatientAge
+from patient;
+
+-- Q8. Show gender as Sex.
+Select Pt_Gender as Sex
+from patient;
+
+-- Q9. Use table alias to fetch name and location.
+select patient.PT_Name, Patient. PT_AddressLocation
+from patient;
+
+-- Q10. Show all columns using table alias.
+select *
+from patient as p;
+
+-- ✔ COUNT – 10 Questions & Answers
+-- Q1. Count total patients.
+select count(Pt_ID) as PatientCount
+from patient;
+
+-- Q2. Count male patients.
+select count(Pt_Gender) as MalePatients
+from patient
+where Pt_Gender = "Male";
+
+-- Q3. Count female patients.
+select count(Pt_Gender) as FemalePatientcount
+from patient
+where Pt_Gender = "Female";
+
+-- Q4. Count patients from Saidapet.
+select count(Pt_ID) as PatientCount
+from patient
+where PT_AddressLocation = "Saidapet";
+
+-- Q5. Count patients above age 50.
+select count(Pt_ID) as PatientCount
+from patient
+where PT_Age > 50;
+
+-- Q6. Count patients below age 30.
+select count(Pt_ID) as PatientCount
+from patient
+where PT_Age > 50;
+
+-- Q7. Count distinct locations.
+select count(distinct PT_AddressLocation) as LocationCount
+from patient;
+
+-- Q8. Count patients from Adyar.
+select count(PT_AddressLocation) as LocationCount
+from patient
+where PT_AddressLocation = "Adyar";
+
+-- Q9. Count patients whose age is between 40 and 60.
+select count(Pt_ID) as patientcount
+from patient
+where PT_Age between 40 and 60;
+
+-- Q10. Count patients from Tambaram.
+select count(PT_ID) as patientcount
+from patient
+where PT_AddressLocation = "Tambaram";
