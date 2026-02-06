@@ -287,3 +287,58 @@ where not Pt_Gender = "Female" and not PT_Age < 51;
 select *
 from patient
 where not Pt_Gender = "Male" and not PT_AddressLocation = "Adyar";
+
+-- DISTINCT – 10 Interview Questions & Answers
+-- 1. List all unique patient locations.
+select distinct(PT_AddressLocation)
+from patient;
+
+-- 2. Find unique genders available in patient data.
+select distinct(Pt_Gender)
+from patient;
+
+-- 3. Retrieve distinct ages of patients.
+select distinct(PT_Age)
+from patient;
+
+-- 4. Find distinct locations where female patients live.
+select PT_Gender, PT_AddressLocation
+from patient
+where Pt_Gender = "Female"
+group by PT_AddressLocation;
+
+-- 5. Find distinct locations of male patients.
+select PT_Gender, PT_AddressLocation
+from patient
+where PT_Gender = "Male"
+group by (PT_AddressLocation);
+
+-- 6. Retrieve distinct patient names.
+select distinct(PT_Name)
+from patient;
+
+-- or
+
+select PT_Name, PT_AddressLocation
+from patient
+group by PT_Name;
+
+-- 7. Get distinct ages above 50.
+select distinct(PT_Age)
+from patient
+where PT_Age > 50;
+
+-- 8. Retrieve unique Chennai locations.
+select distinct(PT_AddressLocation)
+from patient;
+
+-- 9. Find distinct ages below 30.
+select distinct(PT_Age)
+from patient
+where PT_Age < 30;
+
+-- 10. Get distinct locations from Saidapet and Adyar.
+select distinct(PT_AddressLocation)
+from patient
+where PT_AddressLocation in ("Saidapet","Adyar");
+
