@@ -603,3 +603,45 @@ from patient
 where PT_Age = (select min(PT_Age)
 from patient
 where PT_AddressLocation = "Guindy");
+
+-- ✔ MAX – 10 Questions & Answers
+-- Q1. Find oldest patient age.
+select *
+from patient
+where PT_Age = (select max(PT_Age)
+from patient);
+
+-- Q2. Maximum age among male patients.
+select *
+from patient
+where PT_Age = (select max(PT_Age) 
+from patient
+where PT_Gender = "male");
+
+-- Q3. Maximum age among female patients.
+select *
+from patient
+where PT_Age = (select max(PT_Age)
+from patient 
+where PT_Gender = "Female");
+
+-- Q4. Maximum age from Saidapet.
+Select *
+from patient
+where PT_Age = (select max(PT_Age)
+from patient
+where PT_AddressLocation = "Saidapet");
+
+-- Q5. Maximum age below 60.
+select *
+from patient
+where PT_Age = (select max(PT_Age)
+from patient
+where PT_Age < 60);
+
+-- Q6. Maximum age above 50.
+select *
+from patient
+where pt_age = (select max(PT_Age)
+from patient
+where PT_Age > 50);
