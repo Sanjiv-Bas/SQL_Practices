@@ -531,3 +531,75 @@ where PT_Gender = "Male";
 select avg(PT_Age)
 from patient
 where PT_Age > 60 and PT_Gender = "Female";
+
+-- ✔ MIN – 10 Questions & Answers
+-- Q1. Find youngest patient age.
+select min(PT_Age)
+from patient;
+
+-- Q2. Minimum age among male patients.
+select min(PT_Age)
+from patient
+where PT_Gender = "Male";
+
+-- Q3. Minimum age among female patients.
+select min(PT_Age)
+from patient
+where PT_Gender = "Female";
+
+-- Q4. Minimum age from Saidapet.
+select PT_AddressLocation, min(PT_Age)
+from patient
+where Pt_AddressLocation = "Saidapet";
+
+-- Q5. Minimum age above 40.
+select min(PT_Age)
+from patient
+where PT_Age > 40;
+
+-- Q6. Minimum age below 30.
+select min(PT_Age)
+from patient
+where PT_Age < 30;
+
+-- Q7. Youngest male patient.
+select min(PT_Age) as YoungestMale
+from patient
+where PT_Gender = "Male"
+order by Pt_Age asc
+limit 1;
+
+-- or
+
+select * 
+from patient
+where PT_Age = (select min(PT_Age) 
+from patient
+where PT_Gender = "Male");
+
+-- Q8. Youngest female patient.
+select *
+from patient
+where PT_Age = (select min(PT_Age)
+from patient
+where Pt_Gender = "Female");
+
+-- or 
+
+select min(PT_Age)
+from patient
+where Pt_Gender = "Female";
+
+-- Q9. Minimum age from Adyar.
+select *
+from patient
+where PT_Age = (select min(PT_Age)
+from patient
+where PT_AddressLocation = "Adyar");
+
+-- Q10. Minimum age from Guindy.
+select *
+from patient
+where PT_Age = (select min(PT_Age)
+from patient
+where PT_AddressLocation = "Guindy");
