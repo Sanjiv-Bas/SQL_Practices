@@ -645,3 +645,31 @@ from patient
 where pt_age = (select max(PT_Age)
 from patient
 where PT_Age > 50);
+
+-- Q7. Oldest male patient details.
+select *
+from patient
+where PT_Age = (select max(PT_Age)
+from patient
+where Pt_Gender = "Male");
+
+-- Q8. Oldest female patient details.
+select *
+from patient
+where PT_Age = (select max(PT_Age)
+from patient 
+where PT_Gender = "Female");
+
+-- Q9. Maximum age from Tambaram.
+select * 
+from patient 
+where PT_Age = (select max(PT_Age) from patient
+where PT_AddressLocation = "Tambaram");
+
+-- Q10. Maximum age from Velachery.
+
+select *
+from patient
+where PT_Age =(select max(PT_Age)
+from patient
+where PT_AddressLocation = "Velachery");
