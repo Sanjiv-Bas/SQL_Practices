@@ -481,3 +481,53 @@ where Pt_Gender = "Male" and PT_AddressLocation = "Guindy";
 select sum(PT_Age)
 from patient
 where Pt_Gender = "Female" and PT_AddressLocation = "Velachery";
+
+-- ✔ AVG – 10 Questions & Answers
+-- Q1. Find average age of all patients.
+select avg(PT_Age) 
+from patient;
+
+-- Q2. Average age of male patients.
+select avg(Pt_Gender)
+from patient
+where Pt_Gender = "Male";
+
+-- Q3. Average age of female patients.
+select avg(Pt_Gender)
+from patient
+where Pt_Gender = "Female";
+
+-- Q4. Average age of patients from Saidapet.
+select avg(PT_Age)
+from patient
+where PT_AddressLocation = "Saidapet";
+
+-- Q5. Average age of patients above 50.
+select avg(PT_Age)
+from patient
+where PT_Age > 50;
+
+-- Q6. Average age of patients below 40.
+select avg(PT_Age)
+from patient
+where PT_Age < 40;
+
+-- Q7. Average age by gender.
+select avg(PT_Age)
+from patient
+group by PT_Gender;
+
+-- Q8. Average age from each location.
+select avg(PT_Age)
+from patient
+group by  PT_AddressLocation;
+
+-- Q9. Average age of male patients from Adyar.
+select avg(PT_Age)
+from patient
+where PT_Gender = "Male";
+
+-- Q10. Average age of female patients above 60.
+select avg(PT_Age)
+from patient
+where PT_Age > 60 and PT_Gender = "Female";
