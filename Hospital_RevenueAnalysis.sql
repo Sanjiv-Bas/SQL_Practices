@@ -673,3 +673,34 @@ from patient
 where PT_Age =(select max(PT_Age)
 from patient
 where PT_AddressLocation = "Velachery");
+
+-- ✔ HAVING – 10 Questions & Answers
+-- Q1. Locations with more than 2 patients.
+select PT_AddressLocation, Count(PT_ID)
+from patient
+group by PT_AddressLocation
+having count(PT_ID)  > 2;
+
+-- Q2. Gender having more than 25 patients.
+select PT_Gender,Count(PT_ID)
+from patient
+group by PT_Gender
+having count(PT_ID) >25;
+
+-- Q3. Locations with average age above 50.
+select PT_AddressLocation, avg(PT_Age)
+from patient
+group by PT_AddressLocation
+having avg(PT_Age) > 2;
+
+-- Q4. Locations with patients above age 70.
+select PT_AddressLocation,Count(PT_ID)
+from patient
+where PT_Age >70
+group by PT_AddressLocation;
+
+-- Q5. Gender with average age above 22
+select PT_Gender, avg(PT_Age)
+from patient
+group by PT_Gender
+having avg(PT_Age) > 22;
