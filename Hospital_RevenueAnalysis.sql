@@ -704,3 +704,34 @@ select PT_Gender, avg(PT_Age)
 from patient
 group by PT_Gender
 having avg(PT_Age) > 22;
+
+-- Q6. Locations having less than 3 female patients.
+select PT_AddressLocation, count(PT_Gender)
+from patient
+where PT_Gender = "Female"
+group by PT_AddressLocation
+having count(PT_Gender)  < 3;
+
+-- Q7. Locations with total age above 100
+select PT_AddressLocation, sum(Pt_Age)
+from patient
+group by PT_AddressLocation
+having sum(PT_Age) > 100; 
+
+-- Q8. Locations with minimum age above 20
+select PT_AddressLocation, min(PT_Age)
+from patient
+group  by PT_AddressLocation
+having min(PT_Age) > 20;
+
+-- Q9. Gender having max age above 70.
+select Pt_Gender, max(PT_Age)
+from patient
+group by Pt_Gender
+having max(PT_Age) > 70;
+
+-- Q10. Locations with more than 4 patients.
+select PT_AddressLocation, count(PT_ID)
+from patient
+group by PT_AddressLocation
+having count(PT_ID) > 2;
