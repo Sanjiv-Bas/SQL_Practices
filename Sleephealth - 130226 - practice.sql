@@ -186,3 +186,47 @@ select min(Daily_Steps)
 from sleephealth
 where Sleep_Disorder is not null;
 
+-- 🔹 MAX() – 10 Questions & Answers
+-- 1 Maximum sleep duration?
+select max(sleep_duration)
+from sleephealth;
+
+-- 2 Maximum age?
+select max(age)
+from sleephealth;
+
+-- 3 Maximum heart rate?
+select max(heart_rate)
+from sleephealth;
+
+-- 4 Maximum stress level?
+select max(stress_level)
+from sleephealth;
+
+-- 5 Maximum daily steps?
+select max(Daily_Steps)
+from sleephealth;
+
+-- 6 Maximum activity level?
+select max(physical_activity_level)
+from sleephealth;
+
+-- 7 Maximum sleep among males?
+select max(sleep) 
+from sleephealth
+where Gender = "Male";
+
+-- 8 Maximum heart rate for overweight?
+select max(heart_rate)
+from sleephealth
+where BMI_Category = "Overweight";
+
+-- 9 Maximum stress for nurses?
+select max(stress_level)
+from sleephealth
+where Occupation = "Nurse";
+
+-- 10 Maximum steps for people without Insomnia?
+select max(Daily_steps)
+from sleephealth
+where Sleep_Disorder = "Insomnia";
