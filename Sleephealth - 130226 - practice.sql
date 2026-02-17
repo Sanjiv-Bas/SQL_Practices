@@ -186,5 +186,3 @@ select min(Daily_Steps)
 from sleephealth
 where Sleep_Disorder is not null;
 
--- 🔹 MAX() – 10 Questions & Answers
--- 1 Maximum sleep duration?
