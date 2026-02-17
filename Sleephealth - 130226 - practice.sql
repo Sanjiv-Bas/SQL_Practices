@@ -141,3 +141,50 @@ where sleep_disorder is not null;
 select avg(Physical_Activity_Level) as avgphy
 from sleephealth
 where BMI_Category = "Normal";
+
+-- 🔹 MIN() – 10 Questions & Answers
+-- 1 What is the minimum sleep duration?
+select min(Sleep_Duration) as MinSleep
+from sleephealth;
+
+-- 2 Minimum age?
+select min(age) as MinimumAge
+from sleephealth;
+
+-- 3 Minimum heart rate?
+select min(Heart_Rate) as minheart
+from sleephealth;
+ 
+ -- 4 Minimum stress level?
+ select min(stress_level) as minimumstress
+ from sleephealth;
+ 
+ -- 5 Minimum daily steps?
+ select min(Daily_Steps) as mnmdaily_steps
+ from sleephealth;
+ 
+ -- 6  Minimum physical activity?
+ select min(physical_activity) as minphys_act
+ from sleephealth;
+ 
+ -- 7 Minimum sleep among females?
+ select min(sleep_duration)
+ from sleephealth
+ where Gender = "Female";
+
+-- 8  Minimum heart rate for obese?
+select min(heart_rate)
+from sleephealth
+where BMI_Category = "Obese";
+
+-- 9 Minimum stress among doctors?
+select min(stress_level)
+from sleephealth;
+
+-- 10 Minimum steps for people with disorder?
+select min(Daily_Steps)
+from sleephealth
+where Sleep_Disorder is not null;
+
+-- 🔹 MAX() – 10 Questions & Answers
+-- 1 Maximum sleep duration?
