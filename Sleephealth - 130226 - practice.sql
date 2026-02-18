@@ -315,3 +315,53 @@ select *
 from sleephealth
 where not Occupation = "Doctor";
 
+-- 🔹 GROUP BY – 10 Questions & Answers
+-- 1  How many participants are there in each Gender?
+select Count(PerID) as ParticipantCount, Gender
+from sleephealth
+group by Gender;
+
+-- 2  What is the average sleep duration per Occupation?
+select Occupation, avg(Sleep_Duration) as AvgSlpduration
+from sleephealth
+group by Occupation;
+
+-- 3 How many people fall under each BMI category?
+select Count(*)as Total, BMI_Category
+from sleephealth
+group by BMI_Category;
+
+-- 4 Average stress level per Gender?
+select avg(stress_level), Gender
+from sleephealth
+group by gender;	
+
+-- 5️ Total daily steps per Occupation?
+select Occupation, sum(Daily_Steps) as TotalSteps
+from sleephealth
+group by Occupation;
+
+-- 6 Maximum heart rate per BMI category?
+select BMI_Category, max(Heart_Rate) as MaximumHeartRate
+from sleephealth
+group by BMI_Category;
+
+-- 7 Minimum sleep duration per Gender?
+select min(Sleep_duration) as MinimumSlpdtn, Gender
+from sleephealth
+group by Gender;
+
+-- 8 Average physical activity per Occupation?
+select avg(Physical_Activity_Level), Occupation
+from sleephealth
+group by Occupation;
+
+-- 9️ Count of people per Sleep Disorder type?
+select count(PerID)Peoplecount, Sleep_Disorder
+from sleephealth
+group by sleep_disorder;
+
+-- 10  Average heart rate per Age?
+select avg(heart_rate), age
+from sleephealth
+group by age;
