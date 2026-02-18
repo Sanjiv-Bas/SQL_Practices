@@ -257,3 +257,5 @@ where Occupation = "Doctor"
 select *
 from sleephealth
 where Age > 50 and Daily_Steps <= 5000;
+
+
