@@ -230,3 +230,30 @@ where Occupation = "Nurse";
 select max(Daily_steps)
 from sleephealth
 where Sleep_Disorder = "Insomnia";
+
+-- 🔹 AND – 5
+-- 1 List females below age 40?
+select PerID, gender, age
+from sleephealth
+where gender = "Female" and Gender <  40;
+
+-- 2  People sleeping < 6 hrs AND stress > 7?
+select *
+from sleephealth
+where sleep_duration < 6 and stress_level > 7;
+
+-- 3 Obese people with HR > 80;
+select *
+from sleephealth
+where BMI_Category = "Obese" and Heart_Rate >80;
+
+-- 4 Doctors with disorder?
+select * 
+from sleephealth
+where Occupation = "Doctor"
+	and Sleep_Disorder = "Insomnia";
+    
+-- 5 Age >50 AND steps  <= 5000?
+select *
+from sleephealth
+where Age > 50 and Daily_Steps <= 5000;
