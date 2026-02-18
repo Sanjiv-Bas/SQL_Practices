@@ -36,4 +36,13 @@ select curdate() - Interval 1 day;
  -- by using the date also we could do that the sample is given below
 select "2026-02-18" - interval 1 day;
 
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- Add Dates
+  -- Method 1: 
+  select date_add(curdate(), interval 1 day);
+  -- In the above mentioned query date_add will make the addition of days and the word interval will create the interval of the given day
+  -- Sample
+  select date_add(curdate(), interval 5 day);
+  select date_add("2026-02-18", interval 20 day);
+
   
