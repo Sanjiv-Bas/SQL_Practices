@@ -258,4 +258,60 @@ select *
 from sleephealth
 where Age > 50 and Daily_Steps <= 5000;
 
+-- 🔹 OR – 5
+-- 1 Male OR Female?
+select *
+from sleephealth
+where Gender = "Male" or
+	Gender = "Female";
+    
+-- 2 Sleep <6 OR stress >8?
+select *
+from sleephealth
+where sleep_duration < 6 or 
+	  sleep_duration > 8;
+      
+-- 3 Overweight OR Obese?
+select *
+from sleephealth
+where BMI_Category = "Obese" or
+	BMI_Category = "Overweight";
+    
+-- 4 Doctor OR Nurse?
+select *
+from sleephealth
+where Occupation = "Doctor" or
+	  Occupation = "Nurse";
+      
+-- 5 Age >60 OR HR less than or equal to 90?
+select *
+from sleephealth
+where Age > 60 or	
+	  Heart_Rate <= 90;
+
+-- 🔹 NOT
+-- 1 Not Male?
+Select * 
+from sleephealth
+where not Gender = "Male";
+
+-- 2 Not Normal BMI?
+select *
+from sleephealth
+where not BMI_Category = "Normal";
+
+-- 3 Without disorder?
+select  *
+from sleephealth
+where not sleep_disorder = "Insomnia"; 
+
+-- 4 Not age >50?
+select *
+from sleephealth
+where not age > 50;
+
+-- 5 Not Doctors?
+select *
+from sleephealth
+where not Occupation = "Doctor";
 
