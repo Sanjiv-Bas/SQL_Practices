@@ -145,9 +145,36 @@ modify insurance_number varchar(100);
 alter table patients
 modify email varchar(50);
 
--- Where
+-- Where Questions
+-- Display all the female patients
+select patient_id, concat(last_name,", ",first_name) as PatientName, gender, date_of_birth, contact_number, address, registration_date,insurance_provider, insurance_number, email
+from patients
+where gender = "F";
 
+-- Display all doctors whose specialization is Dermatology.
+select  doctor_id, concat(last_name, ", ",first_name ) as doctor_Name, specialization, phone_number, years_experience, hospital_branch, email
+from doctors
+where specialization = "Dermatology";
 
+-- Display all appointments whose status is 'Completed'.
+select * 
+from appointments
+where status = "completed";
 
+-- Display all treatments whose cost is greater than 4000.
+select *
+from billing
+where amount > 4000;
+
+-- Display all treatments whose cost is greater than 3000 and payment status is paid
+select *
+from billing
+where amount > 3000 and
+	  payment_status = "Paid";
+	
+-- Display all bills that are not yet paid.
+select *
+from billing 
+where payment_status in ("Failed","Pending");
 
 
