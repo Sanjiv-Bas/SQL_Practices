@@ -295,4 +295,37 @@ select *
 from billing
 order by bill_date desc;
 
+-- 📚 LIMIT – 5 Questions
+-- Display the first 5 patients.
+select * 
+from patients
+order by first_name asc
+limit 5;
+
+-- Display the first 10 appointments.
+select *
+from appointments
+order by appointment_id asc
+limit 10;
+
+-- Display the top 3 highest treatment costs.
+select *
+from treatments
+order by cost desc
+limit 3;
+
+-- Display the 5 lowest treatment costs.
+select *
+from treatments
+order by cost asc
+limit 5;
+
+-- Display the latest 7 appointments.
+select * 
+from appointments
+order by appointment_id desc
+limit 7;
+
+
+
 
