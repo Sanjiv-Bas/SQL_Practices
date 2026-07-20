@@ -267,3 +267,32 @@ inner join appointments on
 appointments.doctor_id = doctors.doctor_id
 group by Doctor
 having AppCount >20;
+
+-- 📚 ORDER BY – 5 Questions
+-- Display all patients ordered by last name in ascending order.
+select * from patients;
+select *
+from patients
+order by first_name desc;
+
+-- Display all doctors ordered by specialization in ascending order.
+select *
+from doctors
+order by specialization desc;
+
+-- Display all appointments ordered by appointment date from latest to oldest.
+select *
+from appointments
+order by appointment_date desc;
+
+-- Display all treatments ordered by cost from highest to lowest.
+select * 
+from treatments
+order by cost desc;
+
+-- Display all billing records ordered by billing date in descending order.
+select *
+from billing
+order by bill_date desc;
+
+
