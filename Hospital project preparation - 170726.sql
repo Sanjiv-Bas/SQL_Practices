@@ -177,5 +177,62 @@ select *
 from billing 
 where payment_status in ("Failed","Pending");
 
+-- GROUP BY
+-- Find the total number of appointments for each doctor.
+select count(appointments.appointment_id) as TotalAppointment, concat(doctors.last_name,", ",doctors.first_name) as Doctor
+from appointments
+inner join doctors on appointments.doctor_id = doctors.doctor_id
+group by Doctor;
 
+-- Find the total billing amount for each patient.
+select sum(billing.amount), concat(patients.first_name,", ",patients.last_name) as Patient
+from billing
+inner join patients on billing.patient_id = patients.patient_id
+group by Patient;
 
+-- Find the average treatment cost for each doctor.
+select concat(doctors.first_name,", ",doctors.last_name) as Doctor, avg(treatments.cost) as AverageTreatment
+from doctors
+inner join appointments on appointments.doctor_id = doctors.doctor_id
+inner join treatments on appointments.appointment_id = treatments.appointment_id
+group by  Doctor;
+
+-- Count the number of doctors in each specialization.
+select count(doctor_id) as NumberOfDoctors, specialization
+from doctors
+group by specialization;
+
+-- Find the total number of appointments for each appointment status.
+select count(appointment_id) as TotalAppointments, `status`
+from appointments
+group by `status`;
+
+-- 📚 GROUP BY – 5 Questions
+-- Display the total number of patients in each gender.
+select count(patient_id) as TotalPatient, gender
+from patients
+group by gender;
+
+-- Display the total number of appointments for each appointment status.
+select count(appointment_id) as TotNoAppoints, `status`
+from appointments
+group by `status`;
+
+-- Display the average treatment cost for each doctor.
+select doctors.doctor_id, avg(treatments.cost) as Averagetreatcost
+from doctors
+join  appointments on appointments.doctor_id = doctors.doctor_id
+join treatments on appointments.appointment_id = treatments.appointment_id
+group by doctor_id;
+
+-- Display the total billing amount for each payment status.
+select sum(amount) as BillingAmount, payment_status
+from billing
+group by payment_status;
+
+-- Display the total number of appointments handled by each doctor.
+select Concat(doctors.last_name,", ",doctors.first_name) as Doctors,  Count(appointments.appointment_id) as TotalAppoints
+from doctors
+inner join appointments on 
+appointments.doctor_id = doctors.doctor_id
+group by Doctors;
