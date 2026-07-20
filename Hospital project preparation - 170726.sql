@@ -236,3 +236,34 @@ from doctors
 inner join appointments on 
 appointments.doctor_id = doctors.doctor_id
 group by Doctors;
+
+-- 📚 HAVING – 5 Questions
+-- Display the appointment statuses that have more than 50 appointments.
+select * from appointments;
+select count(appointment_id) as NumberofApp, status
+from appointments
+group by status
+having NumberofApp > 50;
+
+-- Display the doctors whose average treatment cost is greater than 3000.
+select concat(doctors.last_name, ", ",doctors.first_name) as Doctor, avg(treatments.cost) as AvgTreCost
+from doctors
+inner join appointments on appointments.doctor_id = doctors.doctor_id
+inner join treatments on appointments.appointment_id = treatments.appointment_id
+group by Doctor
+having AvgTreCost > 3000;
+
+-- Display the payment statuses whose total billing amount is greater than 174000.
+select payment_status, sum(amount) as TBamount
+from billing
+group by payment_status
+having TBamount > 174000;
+
+
+-- Display the doctors who have handled more than 20 appointments.
+select concat(doctors.last_name,", ", doctors.first_name) as Doctor, count(appointments.appointment_id) as AppCount
+from doctors
+inner join appointments on 
+appointments.doctor_id = doctors.doctor_id
+group by Doctor
+having AppCount >20;
