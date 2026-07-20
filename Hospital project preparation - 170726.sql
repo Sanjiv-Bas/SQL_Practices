@@ -326,6 +326,36 @@ from appointments
 order by appointment_id desc
 limit 7;
 
+-- 📚 OFFSET – 5 Questions
+-- Display 5 patients after skipping the first 5 patients.
+select * 
+from patients
+order by patient_id asc
+limit 5 offset 5;
+
+-- Display 5 doctors after skipping the first 3 doctors.
+select *
+from doctors
+order by doctor_id asc
+limit 5 offset 3;
+
+-- Display 10 appointments after skipping the first 5 appointments.
+select *
+from appointments
+order by appointment_id asc
+limit 10 offset 5;
+
+-- Display 5 billing records after skipping the first 5 billing records.
+select *
+from billing
+order by bill_id asc
+limit 5 offset 5;
+
+-- Display 3 treatments after skipping the first 2 treatments, ordered by cost in descending order.
+select * 
+from treatments
+order by cost desc
+limit 3 offset 2
 
 
 
