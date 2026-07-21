@@ -442,3 +442,30 @@ from patients
 union all
 select email
 from doctors;
+
+-- Windows function
+-- ~~~~~~~~~~~~~~~~
+-- Row_Number()
+select * 
+from treatments;
+
+-- Syntax of row number
+-- select *, row_number() over() from table name;
+select *, row_number() over() from treatments;
+
+-- Display all treatments with a row number based on treatment cost from highest to lowest.
+select row_number() over(), cost
+from treatments
+order by cost desc;
+
+select row_number() over(order by cost desc),treatment_type, cost
+from treatments;
+
+--  Rank()
+select *, 
+rank() over(order by cost desc)
+from treatments;
+
+select *, 
+rank() over( partition by treatment_type order by cost desc)
+from treatments;
