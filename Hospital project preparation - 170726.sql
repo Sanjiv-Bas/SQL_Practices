@@ -357,5 +357,46 @@ from treatments
 order by cost desc
 limit 3 offset 2
 
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- View
+-- ~~~~~
+-- Definition : View is a virtual table created from one or more tables. It does not store the data. It displays the data from the underlying tables. Views are used to
+-- avoid writing the same query repeatedly and to achieve reusability.
 
+-- definition and syntax
+-- Create view
+-- Create view is used to create the new view in the database. 
+
+-- syntax 
+-- create view view_name as 
+-- select * from table_name;
+-- select * from view_name;
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+create view hospital as 
+select patients.patient_id,concat(patients.last_name,", ",patients.first_name) as Patients, patients.gender, patients.date_of_birth, patients.contact_number, patients.address,
+patients.registration_date, patients.insurance_provider, patients.insurance_number, patients.email, appointments.appointment_id, appointments.appointment_date,appointments.appointment_time,
+appointments.reason_for_visit,appointments.statues, billing.bill_id, billing.bill_date, billing.amount, billing.payment_method, billing.payment_status, doctors.doctor_id,
+concat(doctors.last_name,",",doctors.first_name) as doctor, doctors.specialization, doctors.phone_number, doctors.years_experience,
+doctors.hospital_branch, treatments.treatment_id,treatments.treatment_type,treatments.descriptio,treatments.cost,treatments.treatment_date
+from patients
+inner join appointments on patients.patient_id = appointments.patient_id
+inner join billing on patients.patient_id = billing.patient_id 
+inner join doctors on doctors.doctor_id = appointments.doctor_id
+inner join treatments on treatments.appointment_id = appointments.appointment_id;
+select * from hospital;
+
+-- syntax of create view
+
+create view hospital2 as
+select * from appointments;
+select * from hospital2;
+
+-- syntax of modify view
+create or replace view hospital2 as
+select * from doctors;
+select * from hospital2;
+
+-- syntax of drop view
+drop view hospital2;
 
