@@ -400,3 +400,45 @@ select * from hospital2;
 -- syntax of drop view
 drop view hospital2;
 
+-- -- 📚 UNION
+-- ~~~~~~~~~~~~
+-- Display the first names of all patients and first names of all doctors in a single result set.
+
+select concat(last_name,", ",first_name) as Patient
+from patients
+union 
+select concat(last_name,", ",first_name) as Doctor
+from doctors;
+
+-- Display all email addresses from the patients table and the doctors table.
+
+select email
+from patients
+union
+select email 
+from doctors;
+
+-- Display all contact numbers from the patients table and the doctors table.
+
+select contact_number
+from patients
+union
+select phone_number
+from doctors;
+
+-- 📚 UNION ALL 
+-- ~~~~~~~~~~~~~
+
+-- Display the first names of all patients and first names of all doctors in a single result set.
+select concat(last_name,", ",first_name) 
+from patients
+union all
+select concat(last_name,", ",first_name)
+from doctors;
+
+-- Display all email addresses from the patients table and the doctors table.
+select email 
+from patients
+union all
+select email
+from doctors;
