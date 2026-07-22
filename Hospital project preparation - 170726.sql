@@ -481,3 +481,14 @@ select * from
 (
 select payment_method, patient_id, amount,row_number() over(partition by payment_method order by amount desc) as rn from billing) as t
 where rn <= 3;
+
+-- Rank all patients based on their bill_amount from highest to lowest.
+select patient_id, amount,rank() over(order by amount desc) from billing;
+
+-- Rank patients within each department according to their bill amount.
+select payment_method,patient_id,amount, rank() over(partition by payment_method order by amount desc) from billing;
+
+-- Display the Top 5 ranked patients according to bill amount.
+select * from 
+( select *, rank() over(partition by payment_method order by amount desc) as DB from billing) as Temp
+limit 5 ;
