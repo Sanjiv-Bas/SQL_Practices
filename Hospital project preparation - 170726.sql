@@ -469,3 +469,15 @@ from treatments;
 select *, 
 rank() over( partition by treatment_type order by cost desc)
 from treatments;
+
+-- Display all patients with a row number based on the highest bill_amount.
+select patient_id,amount,row_number() over(order by amount desc) from billing;
+
+-- Assign a row number to patients within each department based on the highest bill amount.
+select payment_method, patient_id,amount, row_number() over(partition by payment_method order by amount ) from billing;
+
+-- Display only the top 3 highest billed patients from each department using ROW_NUMBER().
+select * from 
+(
+select payment_method, patient_id, amount,row_number() over(partition by payment_method order by amount desc) as rn from billing) as t
+where rn <= 3;
