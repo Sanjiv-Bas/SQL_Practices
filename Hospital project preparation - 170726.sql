@@ -492,3 +492,6 @@ select payment_method,patient_id,amount, rank() over(partition by payment_method
 select * from 
 ( select *, rank() over(partition by payment_method order by amount desc) as DB from billing) as Temp
 limit 5 ;
+
+-- LAG 
+select *, lag(amount) over() from billing;
